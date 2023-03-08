@@ -18,7 +18,7 @@ export default function Home() {
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
       <main className={styles.main}>
-        <h1 id='title' className='text-8xl'>
+        <h1 id='title' className='text-8xl '>
           フードバンク山口ありがとうWeb
         </h1>
       </main>
