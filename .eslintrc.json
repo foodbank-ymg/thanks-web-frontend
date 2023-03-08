@@ -1,5 +1,29 @@
 {
-  "extends": ["next/core-web-vitals", "plugin:tailwindcss/recommended", "prettier"],
-  "plugins": ["prettier"],
-  "ignorePatterns": ["*.config.js"]
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:tailwindcss/recommended",
+    "plugin:import/recommended",
+    "plugin:import/warnings",
+    "prettier"
+  ],
+  "ignorePatterns": ["*.config.js"],
+  "rules": {
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "parent", "sibling", "index", "object", "type"],
+        "pathGroups": [
+          {
+            "pattern": "@alias/**",
+            "group": "parent",
+            "position": "before"
+          }
+        ],
+        "alphabetize": {
+          "order": "asc"
+        },
+        "newlines-between": "always"
+      }
+    ]
+  }
 }

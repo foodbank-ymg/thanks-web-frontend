@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint --dir src",
+    "lint:fix": "next lint --dir src --fix",
+    "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'"
   },
   "dependencies": {
     "@next/font": "13.1.4",
@@ -25,9 +27,9 @@
     "typescript": "4.9.4"
   },
   "devDependencies": {
-    "eslint-config-prettier": "^8.6.0",
+    "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-tailwindcss": "^3.8.2",
-    "prettier": "^2.8.3",
+    "prettier": "^2.8.4",
     "prettier-plugin-tailwindcss": "^0.2.2"
   }
 }
