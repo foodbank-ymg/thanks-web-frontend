@@ -6,7 +6,7 @@ const Footer = () => {
       <div className='flex flex-col rounded-2xl bg-[#701010] p-[16px] text-white md:flex-row'>
         <div className=''>
           <p>
-            <span>フードバンク山口</span>
+            <span className='text-orange-200'>フードバンク山口</span>
           </p>
           <h1>特定非営利法人 フードバンク山口</h1>
           <p>山口市黒川1159-13</p>
@@ -14,7 +14,7 @@ const Footer = () => {
         </div>
         <div className='m-0 md:ml-auto'>
           <p>
-            <span>最近のお便り</span>
+            <span>▼最近のお便り</span>
           </p>
           <p>これまでのお便り</p>
           <p>ありがとうWebsiteについて</p>
