@@ -16,8 +16,8 @@ const Topabout = () => {
         <div className='flex flex-col items-stretch md:flex-row'>
           {/* 左島 */}
           <div className='md:w-1/2'>
-            <div className='w-full p-[16px]'>
-              <div className='relative aspect-[10/6] max-md:mx-auto max-md:w-[90%] md:aspect-[1/1] md:max-w-lg md:flex-row-reverse'>
+            <div className='w-full p-[16px]  md:mx-0 md:ml-auto'>
+              <div className='relative aspect-[10/6] max-md:mx-auto max-md:w-[90%] md:aspect-[1/1] md:max-w-lg '>
                 <Image
                   fill
                   className='hidden md:block'
