@@ -17,17 +17,17 @@ const Topabout = () => {
           {/* 左島 */}
           <div className='md:w-1/2'>
             <div className='w-full p-[16px]  md:mx-0 md:ml-auto'>
-              <div className='relative aspect-[10/6] max-md:mx-auto max-md:w-[90%] md:aspect-[1/1] md:max-w-lg '>
+              <div className='relative mx-auto aspect-[10/6] max-md:w-[90%] md:aspect-[1/1] md:max-w-lg '>
                 <Image
                   fill
                   className='hidden md:block'
-                  src='/img/conglo_@l.png'
+                  src='/conglo_@l.png'
                   alt='デジテック for Yamaguchi'
                 />
                 <Image
                   fill
                   className='md:hidden'
-                  src='/img/conglo_@s.png'
+                  src='/conglo_@s.png'
                   alt='デジテック for Yamaguchi'
                 />
               </div>
