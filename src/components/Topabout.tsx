@@ -8,10 +8,10 @@ const Topabout = () => {
       {''}
       <div className='mx-auto grid h-auto w-full max-w-full justify-items-stretch rounded-b-2xl text-center font-body font-black text-red-900'>
         <div className='z-10 justify-self-center p-8'>
-          <div className='relative text-4xl'>このサイトについて</div>
+          <div className='relative max-md:text-4xl md:text-5xl'>このサイトについて</div>
         </div>
         <div className='relative justify-self-center'>
-          <div className='absolute left-[-165px] top-[-44px] h-4 w-[330px] rounded-full border-8 border-white'></div>
+          <div className='absolute rounded-full border-white max-md:left-[-165px] max-md:top-[-44px] max-md:h-4 max-md:w-[330px] max-md:border-8 md:top-[-45px] md:left-[-210px] md:h-5 md:w-[420px] md:border-[12px]'></div>
         </div>
         <div className='flex flex-col items-stretch md:flex-row'>
           {/* 左島 */}
