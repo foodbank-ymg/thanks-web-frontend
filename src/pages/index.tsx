@@ -1,6 +1,7 @@
 import Head from 'next/head'
 
 import Footer from '@/components/Footer'
+import Topabout from '@/components/Topabout'
 
 export default function Home() {
   return (
@@ -26,14 +27,7 @@ export default function Home() {
         <div className='h-[160px] bg-blue-50'>
           <p>最近のおたよりセクション</p>
         </div>
-
-        <div className='h-[160px] bg-green-50'>
-          <p>これまでのおたよりセクション</p>
-        </div>
-
-        <div className='h-[160px] bg-orange-50'>
-          <p>このサイトについてセクション</p>
-        </div>
+        <Topabout />
 
         <Footer />
       </main>
