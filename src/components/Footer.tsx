@@ -3,7 +3,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className='flex flex-col items-center whitespace-nowrap rounded-[5vw] bg-orange-900 px-[44px] py-[32px] text-xl text-white lg:flex-row'>
+    <div className='flex flex-col items-center whitespace-nowrap rounded-[5vw] bg-mybrown px-[44px] py-[32px] text-xl text-white lg:flex-row'>
       <div className='text-center leading-10 lg:text-left'>
         <Image src='logo_normal.svg' width='500' height='0' alt='logo' />
         <h1 className='pt-4 text-3xl font-bold'>特定非営利法人 フードバンク山口</h1>
