@@ -1,6 +1,7 @@
 import Head from 'next/head'
 
 import Footer from '@/components/Footer'
+import Postcard from '@/components/Postcard'
 import Topabout from '@/components/Topabout'
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
             ヘッダー/ヒーローセクション
           </h1>
         </div>
+        <Postcard />
 
         <div className='h-[160px] bg-blue-50'>
           <p>最近のおたよりセクション</p>
