@@ -36,7 +36,7 @@ const HomePage = ({ latestMonthlyPath }: Props) => {
 
         <div className='h-[160px] bg-blue-50'>
           <p>最近のおたよりセクション</p>
-          <Postcard posts={[]} />
+          <Postcard posts={[]} index={0} />
           <Link href='/latest-posts' className='rounded-full border border-mybrown'>
             もっとおたよりを見る
           </Link>
