@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 
 import Footer from '@/components/Footer'
+import Postcard from '@/components/Postcard'
 import Topabout from '@/components/Topabout'
 import { samplePosts } from '@/data/samplePosts'
 import { buildMonthlyPath } from '@/pages/monthly-posts/[id]'
@@ -35,6 +36,7 @@ const HomePage = ({ latestMonthlyPath }: Props) => {
 
         <div className='h-[160px] bg-blue-50'>
           <p>最近のおたよりセクション</p>
+          <Postcard posts={[]} />
           <Link href='/latest-posts' className='rounded-full border border-mybrown'>
             もっとおたよりを見る
           </Link>
