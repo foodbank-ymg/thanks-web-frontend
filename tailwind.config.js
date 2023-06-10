@@ -57,6 +57,16 @@ module.exports = {
     fontFamily: {
       body: ['"Zen Maru Gothic"'],
     },
+    backgroundImage: {
+      smile: "url('/item_smile_opa20_rot-20.svg')",
+    },
+    backgroundSize: {
+      auto: 'auto',
+      cover: 'cover',
+      contain: 'contain',
+      '60%': '60%',
+      16: '4rem',
+    },
   },
   variants: {},
   plugins: [],
