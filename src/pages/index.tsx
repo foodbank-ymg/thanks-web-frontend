@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-import Calender from '@/components/Calender'
+import Calendars from '@/components/Calendars'
 import Footer from '@/components/Footer'
 import Letter from '@/components/Letter'
 import Topabout from '@/components/Topabout'
@@ -29,8 +29,10 @@ export default function Home() {
 
         <Topabout />
 
+        <div className='py-[40px]'>
+          <Calendars />
+        </div>
         <Footer />
-        <Calender />
       </main>
     </>
   )
