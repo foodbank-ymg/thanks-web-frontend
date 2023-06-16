@@ -2,7 +2,9 @@ import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 
+import Calendars from '@/components/Calendars'
 import Footer from '@/components/Footer'
+import Letter from '@/components/Letter'
 import Postcard from '@/components/Postcard'
 import Topabout from '@/components/Topabout'
 import { samplePosts } from '@/data/samplePosts'
@@ -33,6 +35,7 @@ const HomePage = ({ latestMonthlyPath }: Props) => {
             ヘッダー/ヒーローセクション
           </h1>
         </div>
+        <Letter />
 
         <div className='h-[160px] bg-blue-50'>
           <p>最近のおたよりセクション</p>
@@ -54,6 +57,9 @@ const HomePage = ({ latestMonthlyPath }: Props) => {
 
         <Topabout />
 
+        <div className='py-[40px]'>
+          <Calendars />
+        </div>
         <Footer />
       </main>
     </>
