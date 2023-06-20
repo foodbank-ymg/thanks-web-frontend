@@ -18,7 +18,7 @@ jobs:
           node-version: '16.x'
       - name: install
         run: yarn install
-      - name: build & export
+      - name: build
         run: yarn export
       - name: deploy
         run: yarn deploy:token
