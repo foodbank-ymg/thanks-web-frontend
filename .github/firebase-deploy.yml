@@ -1,6 +1,11 @@
 name: Deploy to firebase
 
-on: [workflow_dispatch, push]
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - 'feature/**'
 
 jobs:
   deploy:
