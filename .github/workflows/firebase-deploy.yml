@@ -1,11 +1,6 @@
 name: Deploy to firebase
 
-on:
-  push:
-    branches:
-      - main
-      - develop
-      - 'feature/**'
+on: [workflow_dispatch, push]
 
 jobs:
   deploy:
@@ -18,6 +13,8 @@ jobs:
           node-version: '16.x'
       - name: install
         run: yarn install
+      - name: deploy
+        run: yarn enableWebFrameworks
       - name: build & export
         run: yarn build
       - name: deploy

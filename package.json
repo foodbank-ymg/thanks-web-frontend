@@ -8,6 +8,7 @@
     "export": "next export",
     "start": "next start",
     "deploy:token": "firebase deploy --only hosting --token ${FIREBASE_TOKEN}",
+    "enableWebFrameworks": "firebase experiments:enable webframeworks",
     "lint": "next lint --dir src",
     "lint:fix": "next lint --dir src --fix",
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'"
