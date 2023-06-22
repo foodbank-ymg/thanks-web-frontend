@@ -67,7 +67,7 @@ const Topabout = () => {
             </div>
           </div>
         </div>
-        <button className='w-[290px] translate-y-6 justify-self-center rounded-full border-4 border-red-900 bg-myyellow px-10 py-2 shadow-gray-500 hover:bg-red-900 hover:text-white'>
+        <button className='w-[290px] translate-y-6 justify-self-center rounded-full border-4 border-red-900 bg-myyellow px-10 py-2 hover:bg-red-900 hover:text-white'>
           <p className='text-xl'>いきさつの物語を読む</p>
         </button>
       </div>

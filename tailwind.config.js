@@ -12,7 +12,7 @@ module.exports = {
       },
       fontSize: {
         h2: [
-          '48px',
+          '3.75vw',
           {
             lineHeight: '48px',
             fontWeight: '500',
@@ -60,6 +60,7 @@ module.exports = {
     },
     backgroundImage: {
       smile: "url('/item_smile_opa20_rot-20.svg')",
+      mail: "url('/Illust_letter.svg')",
     },
     backgroundSize: {
       auto: 'auto',
@@ -67,6 +68,31 @@ module.exports = {
       contain: 'contain',
       '60%': '60%',
       16: '4rem',
+    },
+    backgroundPosition: {
+      bottom: 'bottom',
+      'bottom-4': 'center bottom 1rem',
+      center: 'center',
+      left: 'left',
+      'left-bottom': 'left bottom',
+      'left-top': 'left top',
+      right: 'right',
+      'right-bottom': 'right bottom',
+      'right-top': 'right 4rem top 4rem',
+      top: 'top',
+      'top-4': 'center top 1rem',
+    },
+    borderRadius: {
+      none: '0',
+      sm: '0.125rem',
+      DEFAULT: '0.25rem',
+      md: '0.375rem',
+      lg: '0.5rem',
+      xl: '0.75rem',
+      '2xl': '1rem',
+      '3xl': '1.5rem',
+      full: '9999px',
+      large: '5vw',
     },
   },
   variants: {},
