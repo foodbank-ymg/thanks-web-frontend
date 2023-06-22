@@ -13,14 +13,14 @@ jobs:
           node-version: '16.x'
       - name: install
         run: yarn install
-      - name: deploy
+      - name: enable web frameworks
         run: yarn enableWebFrameworks
-      - name: build & export
-        run: yarn build
-      - name: deploy
-        run: yarn deploy:token
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GH_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
+          channelId: live
+          projectId: yuda-fox-dev
       - name: after-deploy
         run: yarn after-deploy
         env:
