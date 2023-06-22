@@ -33,7 +33,7 @@ const LatestLetter = () => {
           </div>
         </div>
         <div className='md:hidden'></div>
-        <div className='mx-auto grid w-[100vw] justify-items-stretch'>
+        <div className='relative mx-auto grid w-[100vw] justify-items-stretch'>
           <button className='z-10 h-[64px] w-[350px] translate-y-6  justify-self-center rounded-full border-4 border-red-900 bg-myyellow hover:bg-red-900 hover:text-white'>
             <p className='text-xl'>もっとおたよりを見る</p>
           </button>
