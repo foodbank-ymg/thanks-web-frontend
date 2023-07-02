@@ -18,6 +18,8 @@
     "autoprefixer": "^10.4.13",
     "eslint": "8.32.0",
     "eslint-config-next": "13.1.4",
+    "firebase-admin": "^11.9.0",
+    "moment": "^2.29.4",
     "next": "13.1.4",
     "postcss": "^8.4.21",
     "postcss-nested": "^6.0.0",
