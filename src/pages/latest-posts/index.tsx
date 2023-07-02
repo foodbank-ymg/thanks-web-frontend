@@ -2,7 +2,7 @@ import { GetStaticProps } from 'next'
 import React from 'react'
 
 import PostList from '@/components/PostList'
-import { samplePosts } from '@/data/samplePosts'
+import { GetPosts } from '@/data/posts'
 import { Post } from '@/types/Post'
 
 const LATEST_POSTS_QUANTITY = 9
@@ -23,7 +23,8 @@ export default LatestPostsPage
 
 export const getStaticProps: GetStaticProps = async () => {
   // 仮データ（後でDBデータに差し替え）
-  const posts = samplePosts.slice(0, Math.min(samplePosts.length, LATEST_POSTS_QUANTITY))
+  let posts_ = await GetPosts()
+  const posts = posts_.slice(0, Math.min(posts_.length, LATEST_POSTS_QUANTITY))
 
   return {
     props: {
