@@ -1,17 +1,25 @@
+import { GetStaticProps } from 'next'
 import { imageConfigDefault } from 'next/dist/shared/lib/image-config'
 import Image from 'next/image'
 import React from 'react'
+import { Carousel } from 'react-responsive-carousel'
 
+import { getNewsAll } from '../../_letter/news'
+import { ILetter } from '../types/letter'
+
+import LetterCarousel from './LetterCarousel'
 import Postcard from './Postcard'
 
 import { samplePosts } from '@/data/samplePosts'
 import { Post } from '@/types/Post'
+
 type Props = {
   posts: Post[]
   index: number
+  allLeter: ILetter[]
 }
 
-const LatestLetter = () => {
+const LatestLetter = ({ allLeter }: Props): JSX.Element => {
   return (
     <div className=''>
       <div className='bg-myyellow max-md:hidden md:w-[80%] md:rounded-r-large md:bg-mail md:bg-right-top md:bg-no-repeat xl:relative'>
@@ -32,7 +40,12 @@ const LatestLetter = () => {
             <Postcard posts={samplePosts} index={0} />
           </div>
         </div>
-        <div className='md:hidden'></div>
+        <div className='md:hidden'>
+          <LetterCarousel
+            slidePercentage={115}
+            newsList={allLeter.filter((letter) => letter.isRecommended)}
+          />
+        </div>
         <div className='relative mx-auto grid w-[100vw] justify-items-stretch'>
           <button className='z-10 h-[64px] w-[350px] translate-y-6  justify-self-center rounded-full border-4 border-red-900 bg-myyellow hover:bg-red-900 hover:text-white'>
             <p className='text-xl'>もっとおたよりを見る</p>
@@ -45,3 +58,11 @@ const LatestLetter = () => {
 }
 
 export default LatestLetter
+
+export const getStaticProps: GetStaticProps = async () => {
+  const allNews = getNewsAll()
+
+  return {
+    props: { allNews },
+  }
+}
