@@ -1,3 +1,4 @@
+import moment from 'moment'
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
@@ -8,7 +9,7 @@ import Footer from '@/components/Footer'
 import Letter from '@/components/Letter'
 import Postcard from '@/components/Postcard'
 import Topabout from '@/components/Topabout'
-import { GetPosts } from '@/data/posts'
+import { GetApprovedPosts } from '@/data/posts'
 import { buildMonthlyPath } from '@/pages/monthly-posts/[id]'
 import { Post } from '@/types/Post'
 
@@ -72,11 +73,11 @@ export default HomePage
 
 export const getStaticProps: GetStaticProps = async () => {
   // 現在時刻の月ではない直近投稿が直近の月次ページ
-  const now = new Date()
+  const now = moment().utcOffset(9).toDate()
   const nowMonth = buildMonthlyPath(`${now.getFullYear()}-${now.getMonth() + 1}`)
 
   let latestMonthlyPath = ''
-  let posts = await GetPosts()
+  let posts = await GetApprovedPosts()
   posts.forEach((post) => {
     const postMonthlyPath = buildMonthlyPath(post.createdAt)
     if (latestMonthlyPath === '' && postMonthlyPath !== nowMonth) {

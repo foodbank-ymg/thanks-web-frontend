@@ -12,6 +12,7 @@ export const GetPosts = async () => {
     await db
       .collection('posts')
       .where('status', '==', postStatus.APPROVED)
+      .orderBy('approvedAt', 'desc')
       .withConverter<Post>(postConverter)
       .get()
   ).forEach((doc) => {
@@ -56,7 +57,7 @@ const postConverter = {
       images: data.images.map(
         (image: string) => `${process.env.IMAGE_BASE_URL}/${encodeURIComponent(image)}`,
       ),
-      createdAt: moment(data.createdAt.toDate()).format('YYYY.MM.DD'),
+      createdAt: moment(data.createdAt.toDate()).utcOffset(9).format('YYYY.MM.DD'),
     }
   },
 }
