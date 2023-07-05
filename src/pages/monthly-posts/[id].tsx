@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import React from 'react'
 
 import PostList from '@/components/PostList'
-import { samplePosts } from '@/data/samplePosts'
+import { GetApprovedPosts } from '@/data/posts'
 import { Post } from '@/types/Post'
 
 type Props = {
@@ -22,7 +22,8 @@ export default MonthlyPostsPage
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const id = params?.id as string
 
-  const posts = samplePosts.filter((post) => {
+  let posts_ = await GetApprovedPosts()
+  const posts = posts_.filter((post) => {
     return buildMonthlyPath(post.createdAt) === id
   })
 
@@ -35,7 +36,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const yearMonths: string[] = []
-  samplePosts.forEach((post) => {
+  let posts = await GetApprovedPosts()
+  posts.forEach((post) => {
     const path = buildMonthlyPath(post.createdAt)
     if (!yearMonths.includes(path)) {
       yearMonths.push(path)

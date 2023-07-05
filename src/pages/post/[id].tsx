@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 
-import { samplePosts } from '@/data/samplePosts'
+import { GetPosts } from '@/data/posts'
 import { Post } from '@/types/Post'
 
 type PostWithNeighbor = Post & {
@@ -12,23 +12,13 @@ type PostWithNeighbor = Post & {
 
 type Props = {
   initialPost: PostWithNeighbor
+  allPosts: PostWithNeighbor[]
 }
 
-const PostPage = ({ initialPost }: Props) => {
+const PostPage = ({ initialPost, allPosts }: Props) => {
   const router = useRouter()
 
   const [post, setPost] = useState<PostWithNeighbor>(initialPost)
-
-  const [allPosts, setAllPosts] = useState<PostWithNeighbor[] | null>(null)
-  useEffect(() => {
-    const posts = samplePosts.map((p, idx) => {
-      return {
-        ...p,
-        index: idx,
-      }
-    })
-    setAllPosts(posts)
-  }, [])
 
   return (
     <div className='container mx-auto max-w-screen-md'>
@@ -74,13 +64,15 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   let post: Post = {
     id: '',
+    recipientGroupName: '',
     subject: '',
     body: '',
     images: [],
     createdAt: '',
   }
   let index: number = 0
-  samplePosts.forEach((p, idx) => {
+  let posts = await GetPosts()
+  posts.forEach((p, idx) => {
     if (p.id === id) {
       post = p
       index = idx
@@ -93,12 +85,19 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         ...post,
         index: index,
       },
+      allPosts: posts.map((p, idx) => {
+        return {
+          ...p,
+          index: idx,
+        }
+      }),
     },
   }
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = samplePosts.map((post) => {
+  let posts = await GetPosts()
+  const paths = posts.map((post) => {
     return {
       params: {
         id: post.id,
