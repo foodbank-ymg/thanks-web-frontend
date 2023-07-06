@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 
-import { GetPosts } from '@/data/posts'
+import { GetApprovedPosts } from '@/data/posts'
 import { Post } from '@/types/Post'
 
 type PostWithNeighbor = Post & {
@@ -71,7 +71,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     createdAt: '',
   }
   let index: number = 0
-  let posts = await GetPosts()
+  let posts = await GetApprovedPosts()
   posts.forEach((p, idx) => {
     if (p.id === id) {
       post = p
@@ -96,7 +96,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  let posts = await GetPosts()
+  let posts = await GetApprovedPosts()
   const paths = posts.map((post) => {
     return {
       params: {

@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start",
+    "enableWebFrameworks": "firebase experiments:enable webframeworks",
     "lint": "next lint --dir src",
     "lint:fix": "next lint --dir src --fix",
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'"
