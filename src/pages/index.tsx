@@ -2,7 +2,6 @@ import moment from 'moment'
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
 
 import Calendars from '@/components/Calendars'
 import Footer from '@/components/Footer'
