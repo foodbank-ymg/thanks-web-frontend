@@ -11,6 +11,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: '.node-version'
+      - id: 'auth'
+        name: 'Authenticate to Google Cloud'
+        uses: 'google-github-actions/auth@v0.4.0'
+        with:
+          credentials_json: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_DEV }}'
       - name: install
         run: yarn install
       - name: build
