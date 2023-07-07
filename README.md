@@ -19,4 +19,4 @@ merge `develop` branch
 <https://thanks-web-dev.web.app/>
 
 merge `main` branch
-<https://thanks-web.web.app/>
+<https://thanks-web-prod.web.app/>
