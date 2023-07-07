@@ -5,6 +5,8 @@ import Link from 'next/link'
 
 import Calendars from '@/components/Calendars'
 import Footer from '@/components/Footer'
+import Header from '@/components/Header'
+import HeroLetter from '@/components/HeroLetter'
 import Letter from '@/components/Letter'
 import Postcard from '@/components/Postcard'
 import Topabout from '@/components/Topabout'
@@ -29,14 +31,26 @@ const HomePage = ({ latestMonthlyPath, posts }: Props) => {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
-      <main>
-        {/* ヘッダー */}
+      <main className='mx-auto max-w-[1280px]'>
+        {/* 固定ヘッダー */}
+        <div className='fixed z-50 w-full max-w-[1280px]'>
+          <Header />
+        </div>
+
         {/* ヒーローセクション */}
-        <div className='h-[160px] bg-red-50'>
-          <h1 id='title' className='text-2xl'>
-            ヘッダー/ヒーローセクション
+        <HeroLetter />
+        <div className='bg-myyellowpale text-center'>
+          <h1 className='rounded-bl-[48px] bg-mywhite pb-8 text-mlabel text-mybrown sm:text-label'>
+            あなたあての
+            <br className='sm:hidden' />
+            ”ありがとう”が届きました。
+            <br />
+            そして、みなさまあて
+            <br className='sm:hidden' />
+            の”ありがとう”を届けます。
           </h1>
         </div>
+
         <Letter />
 
         <div className='h-[160px] bg-blue-50'>
