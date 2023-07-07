@@ -1,0 +1,20 @@
+name: Hook to backend production
+
+on:
+  workflow_run:
+    workflows:
+      - Deploy to firebase production
+    types:
+      - completed
+
+jobs:
+  request:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: request to notify content
+        uses: fjogeleit/http-request-action@master
+        with:
+          url: '${{ secrets.BACKEND_HOOK_URL_PROD }}'
+          method: 'POST'
+          customHeaders: '{"Token": "${{ secrets.BACKEND_HOOK_TOKEN_PROD }}"}'
