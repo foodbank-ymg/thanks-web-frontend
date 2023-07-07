@@ -1,8 +1,23 @@
+import moment from 'moment'
+import { GetStaticProps } from 'next'
 import Head from 'next/head'
+import Link from 'next/link'
 
+import Calendars from '@/components/Calendars'
 import Footer from '@/components/Footer'
+import Letter from '@/components/Letter'
+import Postcard from '@/components/Postcard'
+import Topabout from '@/components/Topabout'
+import { GetApprovedPosts } from '@/data/posts'
+import { buildMonthlyPath } from '@/pages/monthly-posts/[id]'
+import { Post } from '@/types/Post'
 
-export default function Home() {
+type Props = {
+  latestMonthlyPath: string
+  posts: Post[]
+}
+
+const HomePage = ({ latestMonthlyPath, posts }: Props) => {
   return (
     <>
       <Head>
@@ -22,21 +37,57 @@ export default function Home() {
             ヘッダー/ヒーローセクション
           </h1>
         </div>
+        <Letter />
 
         <div className='h-[160px] bg-blue-50'>
           <p>最近のおたよりセクション</p>
+          <Postcard posts={posts} index={0} />
+          <Link href='/latest-posts' className='rounded-full border border-mybrown'>
+            もっとおたよりを見る
+          </Link>
         </div>
 
         <div className='h-[160px] bg-green-50'>
-          <p>これまでのおたよりセクション</p>
+          <p>月ごとのおたよりセクション</p>
+          <Link
+            href={`/monthly-posts/${latestMonthlyPath}`}
+            className='rounded-full border border-mybrown'
+          >
+            もっとおたよりを見る
+          </Link>
         </div>
 
-        <div className='h-[160px] bg-orange-50'>
-          <p>このサイトについてセクション</p>
-        </div>
+        <Topabout />
 
+        <div className='py-[40px]'>
+          <Calendars />
+        </div>
         <Footer />
       </main>
     </>
   )
+}
+
+export default HomePage
+
+export const getStaticProps: GetStaticProps = async () => {
+  // 現在時刻の月ではない直近投稿が直近の月次ページ
+  const now = moment().utcOffset(9).toDate()
+  const nowMonth = buildMonthlyPath(`${now.getFullYear()}-${now.getMonth() + 1}`)
+
+  let latestMonthlyPath = ''
+  let posts = await GetApprovedPosts()
+  posts.forEach((post) => {
+    const postMonthlyPath = buildMonthlyPath(post.createdAt)
+    if (latestMonthlyPath === '' && postMonthlyPath !== nowMonth) {
+      latestMonthlyPath = postMonthlyPath
+    }
+  })
+
+  return {
+    props: {
+      latestMonthlyPath,
+      posts,
+    },
+  }
 }
