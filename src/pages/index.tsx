@@ -4,7 +4,6 @@ import Head from 'next/head'
 import Link from 'next/link'
 
 import Calendars from '@/components/Calendars'
-import Detail from '@/components/Detail'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import HeroLetter from '@/components/HeroLetter'
@@ -78,7 +77,6 @@ const HomePage = ({ latestMonthlyPath, posts }: Props) => {
           <Calendars />
         </div>
         <Footer />
-        <Detail />
       </main>
     </>
   )
