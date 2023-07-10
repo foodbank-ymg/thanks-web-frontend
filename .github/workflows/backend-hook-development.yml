@@ -17,4 +17,4 @@ jobs:
         with:
           url: '${{ secrets.BACKEND_HOOK_URL_DEV }}'
           method: 'POST'
-          customHeaders: '{"Token": "${{ secrets.BACKEND_HOOK_TOKEN_DEV }}"}'
+          customHeaders: '{"Authorization": "Bearer ${{ secrets.BACKEND_HOOK_TOKEN_DEV }}"}'
