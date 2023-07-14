@@ -8,6 +8,7 @@ module.exports = {
         myyellowpale: '#FEF8EA',
         mypurple: '#601986',
         mybrown: '#660000',
+        mywhite: '#FFFFFF',
       },
       fontSize: {
         h2: [
