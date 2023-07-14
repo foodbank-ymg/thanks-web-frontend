@@ -22,11 +22,23 @@ const PostPage = ({ initialPost, allPosts }: Props) => {
 
   return (
     <div className='container mx-auto max-w-screen-md'>
-      <div>
-        <h1>{post.subject}</h1>
-        <p>{post.createdAt}</p>
-        <p>{post.body}</p>
-        <Image src={post.images[0]} alt='' width={360} height={360} />
+      <div className='h-[360px] bg-gray-500'>Hero</div>
+      <div className='mx-auto  bg-white text-center font-body text-mybrown'>
+        <h1 className='break-words text-desc lg:whitespace-nowrap lg:text-mlabel'>
+          {post.subject}
+        </h1>
+        <p className='mt-8 mb-16 text-myyellow'>{post.recipientGroupName}</p>
+        <p className='mx-auto mb-16 w-full break-words'>{post.body}</p>
+        <p className='mt-8 mb-16 text-gray-400'>{post.createdAt}</p>
+        <div className='flex justify-center'>
+          <Image
+            src='/img/post-sample.webp'
+            width='200'
+            height='200'
+            alt='logo'
+            className='w-1/2'
+          />
+        </div>
       </div>
       <div className='flex flex-col'>
         <button onClick={() => router.back()}>一覧へもどる</button>
@@ -53,6 +65,13 @@ const PostPage = ({ initialPost, allPosts }: Props) => {
           次の記事
         </button>
       </div>
+      {/* <div>
+        <h1>{post.subject}</h1>
+        <p>{post.createdAt}</p>
+        <p>{post.body}</p>
+        <Image src={post.images[0]} alt='' width={360} height={360} />
+      </div>
+       */}
     </div>
   )
 }
