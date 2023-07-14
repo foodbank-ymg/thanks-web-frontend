@@ -2,10 +2,12 @@ import Head from 'next/head'
 import Image from 'next/image'
 import React from 'react'
 
+import AboutDescription from '@/components/AboutDescription'
+import AboutGroups from '@/components/AboutGroups'
+import AboutIntroduction from '@/components/AboutIntroduction'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import HeroRect from '@/components/HeroRect'
-import Topabout from '@/components/Topabout'
 
 const AboutPage = () => {
   return (
@@ -49,9 +51,9 @@ const AboutPage = () => {
           </h1>
         </HeroRect>
 
-        <Topabout />
-
-        <div className='h-[480px] bg-myyellowpale'></div>
+        <AboutIntroduction />
+        <AboutGroups />
+        <AboutDescription />
 
         <Footer />
       </main>

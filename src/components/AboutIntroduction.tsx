@@ -2,7 +2,7 @@ import { imageConfigDefault } from 'next/dist/shared/lib/image-config'
 import Image from 'next/image'
 import React from 'react'
 
-const Topabout = () => {
+const AboutIntroduction = () => {
   return (
     <div className='palt rounded-b-[24px] bg-amber-400 md:rounded-b-[50px]'>
       {''}
@@ -75,4 +75,4 @@ const Topabout = () => {
   )
 }
 
-export default Topabout
+export default AboutIntroduction

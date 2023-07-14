@@ -3,14 +3,13 @@ import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 
+import AboutIntroduction from '@/components/AboutIntroduction'
 import Calendars from '@/components/Calendars'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import HeroLetter from '@/components/HeroLetter'
 import LatestLetter from '@/components/LatestLetter'
 import Letter from '@/components/Letter'
-import Postcard from '@/components/Postcard'
-import Topabout from '@/components/Topabout'
 import { GetApprovedPosts } from '@/data/posts'
 import { buildMonthlyPath } from '@/pages/monthly-posts/[id]'
 import { Post } from '@/types/Post'
@@ -66,7 +65,7 @@ const HomePage = ({ latestMonthlyPath, posts }: Props) => {
           </Link>
         </div>
 
-        <Topabout />
+        <AboutIntroduction />
 
         <div className='py-[40px]'>
           <Calendars />
