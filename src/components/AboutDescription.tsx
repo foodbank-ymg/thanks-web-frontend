@@ -1,54 +1,63 @@
 import Image from 'next/image'
 import React from 'react'
 
+import { classNames } from '@/lib/classNames'
+
+type DescContent = {
+  image: string
+  title: string
+  description: string
+}
+
+const descContents: DescContent[] = [
+  {
+    image: '/img/hero-rect-bg.jpg',
+    title: '○○○○○○○○○●○○○○○○○○○●○○○○○○○○○●。',
+    description:
+      'あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。',
+  },
+  {
+    image: '/img/hero-rect-bg.jpg',
+    title: '◯◯◯◯◯◯◯◯◯●◯◯◯◯◯◯◯◯◯●◯◯◯◯◯◯◯◯◯●',
+    description:
+      'あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。',
+  },
+]
+
 const AboutDescription = () => {
-  return (
-    <div className='bg-myyellow'>
-      <div className='rounded-large bg-white'>
-        <div className='flex-col p-[5em]'>
-          <div className='flex w-full pb-[5em] max-md:flex-col md:flex-row'>
-            {/*PC 上*/}
-            <div className='max-md:w-full md:w-1/2'>
-              {/*PC 右上*/}
-              <Image
-                src='/img/hero-rect-bg.jpg'
-                width={1280}
-                height={1280}
-                alt=''
-                className='aspect-[1/1] object-cover'
-              />
-            </div>
-            <div className='h-auto max-md:w-full md:w-1/2'>
-              {/*PC 左上*/}
-              <div className='text-left'>
-                <h2>{/*タイトル*/}</h2>
-                <desc>{/*本文 */}</desc>
-                <desc>{/*まとめ */}</desc>
-              </div>
-            </div>
-          </div>
-          <div className='flex w-full max-md:flex-col md:flex-row-reverse'>
-            {/*PC 下*/}
-            <div className='max-md:w-full md:w-1/2'>
-              {/*PC 左下*/}
-              <Image
-                src='/img/hero-rect-bg.jpg'
-                width={1280}
-                height={1280}
-                alt=''
-                className='aspect-[1/1] object-cover'
-              />
-            </div>
-            <div className='h-auto max-md:w-full md:w-1/2'>
-              {/*PC 右下*/}
-              <div className='max-md:text-left md:text-right'>
-                <h2>{/*タイトル*/}OOOOOOOOOOOOOOOOOOO</h2>
-                <desc>{/*本文 */}</desc>
-                <desc>{/*まとめ */}</desc>
-              </div>
-            </div>
+  const renderDescContent = (cont: DescContent, orderIndx: number) => {
+    return (
+      <div
+        className={classNames(
+          'flex w-full pb-[5em] max-md:flex-col',
+          orderIndx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse',
+        )}
+      >
+        <div className='max-md:w-full md:w-1/2'>
+          <Image
+            src={cont.image}
+            width={1280}
+            height={1280}
+            alt=''
+            className='aspect-[1/1] object-cover'
+          />
+        </div>
+        <div className='h-auto max-md:w-full md:w-1/2'>
+          <div className='text-left'>
+            <h2>{cont.title}</h2>
+            <p>{cont.description}</p>
           </div>
         </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className='bg-myyellowpale'>
+      <div className='rounded-large bg-white p-[5em]'>
+        {descContents.map((cont, indx) => (
+          <div key={indx}>{renderDescContent(cont, indx)}</div>
+        ))}
       </div>
     </div>
   )
