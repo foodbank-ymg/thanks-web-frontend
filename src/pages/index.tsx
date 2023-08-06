@@ -3,6 +3,7 @@ import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 
+import AboutGroups from '@/components/AboutGroups'
 import AboutIntroduction from '@/components/AboutIntroduction'
 import Calendars from '@/components/Calendars'
 import Footer from '@/components/Footer'
