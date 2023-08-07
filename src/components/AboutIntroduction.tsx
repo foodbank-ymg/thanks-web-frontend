@@ -2,7 +2,7 @@ import { imageConfigDefault } from 'next/dist/shared/lib/image-config'
 import Image from 'next/image'
 import React from 'react'
 
-const Topabout = () => {
+const AboutIntroduction = () => {
   return (
     <div className='palt rounded-b-[24px] bg-amber-400 md:rounded-b-[50px]'>
       {''}
@@ -67,7 +67,7 @@ const Topabout = () => {
             </div>
           </div>
         </div>
-        <button className='w-[290px] translate-y-6 justify-self-center rounded-full border-4 border-red-900 bg-myyellow px-10 py-2 shadow-gray-500 hover:bg-red-900 hover:text-white'>
+        <button className='w-[290px] translate-y-6 justify-self-center rounded-full border-4 border-red-900 bg-myyellow px-10 py-2 hover:bg-red-900 hover:text-white'>
           <p className='text-xl'>いきさつの物語を読む</p>
         </button>
       </div>
@@ -75,4 +75,4 @@ const Topabout = () => {
   )
 }
 
-export default Topabout
+export default AboutIntroduction
