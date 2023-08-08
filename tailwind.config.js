@@ -8,6 +8,7 @@ module.exports = {
         myyellowpale: '#FEF8EA',
         mypurple: '#601986',
         mybrown: '#660000',
+        mygray: '#999999',
         mywhite: '#FFFFFF',
       },
       fontSize: {
@@ -32,6 +33,13 @@ module.exports = {
             fontWeight: '500',
           },
         ],
+        posthead: [
+          '32px',
+          {
+            lineHeight: '42px',
+            fontWeight: '500',
+          },
+        ],
         mh2: [
           '32px',
           {
@@ -50,6 +58,13 @@ module.exports = {
           '16px',
           {
             lineHeight: '24px',
+            fontWeight: '500',
+          },
+        ],
+        mposthead: [
+          '24px',
+          {
+            lineHeight: '32px',
             fontWeight: '500',
           },
         ],
