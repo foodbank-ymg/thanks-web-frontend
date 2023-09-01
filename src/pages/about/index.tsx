@@ -22,9 +22,9 @@ const AboutPage = () => {
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
 
-      <main className='mx-auto max-w-[1280px]'>
+      <main className='mx-auto max-w-main'>
         {/* 固定ヘッダー */}
-        <div className='fixed z-50 w-full max-w-[1280px]'>
+        <div className='fixed z-50 w-full max-w-main'>
           <Header />
         </div>
 

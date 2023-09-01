@@ -7,33 +7,30 @@ import { Post } from '@/types/Post'
 type Props = {
   posts: Post[]
   index: number
+  forceVertical?: boolean
 }
 
 const Postcard = ({ posts, index }: Props) => {
   const post = posts[index]
 
   return (
-    <div className='m-2'>
-      <div className='relative aspect-[2/1] sm:aspect-[9/13] sm:w-[350px]'>
-        <div className='absolute bottom-0 left-0 h-full w-[95%] origin-bottom rotate-6 overflow-hidden rounded-3xl bg-gray-400 opacity-50 sm:w-full sm:origin-bottom-left'></div>
-        <div className='relative z-10 h-full w-[95%] rounded-3xl bg-white sm:w-full'>
-          <Link href={`/post/${post.id}`} className='absolute h-full w-full rounded-3xl bg-white'>
-            <div className='flex h-full w-full flex-row p-3 sm:flex-col '>
-              <div className='relative flex aspect-[1/1] h-auto w-[45%] overflow-hidden rounded-xl border bg-center sm:w-auto'>
-                <Image fill src={post.images[0]} alt='' className='block object-cover' />
-              </div>
-              <div className='relative flex grow flex-col bg-smile bg-contain bg-right-bottom bg-no-repeat p-3 text-center max-sm:bg-60% sm:bg-left-bottom'>
-                <div className='p-3'>
-                  <p className=' text-mybrown max-sm:top-1/4 sm:flex'>{post.subject}</p>
-                </div>
-                <p className='absolute bottom-[20%] left-1/2 -translate-x-1/2 text-myyellow sm:bottom-0'>
-                  {post.createdAt}
-                </p>
-              </div>
+    <div className='relative max-w-[360px] md:w-[28vw]'>
+      <div className='relative z-10 h-full w-full rounded-cardout bg-white'>
+        <Link href={`/post/${post.id}`}>
+          <div className='flex h-full w-full flex-row p-[1.25vw] sm:flex-col '>
+            <div className='relative flex aspect-[1/1] w-[45%] overflow-hidden rounded-cardin sm:w-auto sm:pb-[5vw]'>
+              <Image fill src={post.images[0]} alt='' className='object-cover' />
             </div>
-          </Link>
-        </div>
+            <div className='flex flex-col items-center bg-smile bg-contain bg-right-bottom bg-no-repeat sm:bg-left-bottom'>
+              <div className='mx-auto max-w-[240px] pt-[1vw] pb-[3vw] text-center sm:text-left'>
+                <p className='text-posth'>{post.subject}</p>
+              </div>
+              <p className='text-postd text-myyellow sm:bottom-0'>{post.recipientGroupName}</p>
+            </div>
+          </div>
+        </Link>
       </div>
+      <div className='absolute bottom-0 left-0 h-full w-full origin-bottom-left rotate-[5deg] rounded-cardout bg-mygraydark/10'></div>
     </div>
   )
 }

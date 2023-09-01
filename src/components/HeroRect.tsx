@@ -18,7 +18,7 @@ const HeroRect = ({ children }: Props) => {
           className='object-cover'
         />
         <div className='absolute bottom-[50%] right-[50%] z-10 translate-x-[50%] translate-y-[50%]'>
-          <div className='rounded-[48px] bg-mywhite/50 px-[64px] py-[32px]'>{children}</div>
+          <div className='rounded-common bg-mywhite/50 px-[64px] py-[32px]'>{children}</div>
         </div>
       </div>
     </div>
