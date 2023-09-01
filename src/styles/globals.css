@@ -9,3 +9,40 @@
     font-feature-settings: 'palt';
   }
 }
+
+.text-h {
+  font-size: clamp(20px, 2.5vw, 32px);
+  font-height: clamp(32px, 3.75vw, 48px);
+}
+
+.text-hb {
+  font-size: clamp(24px, 3.75vw, 48px);
+  font-weight: 600;
+}
+
+.text-btn {
+  font-size: clamp(18px, 2vw, 24px);
+  border-width: 4px;
+}
+
+/* 投稿見出し */
+.text-posth {
+  font-size: clamp(14px, 1.75vw, 20px);
+}
+
+/* 投稿所属 */
+.text-postd {
+  font-size: clamp(12px, 1.5vw, 16px);
+}
+
+.pt-h {
+  padding-top: clamp(20px, 2.5vw, 32px);
+}
+
+.pt-2h {
+  padding-top: clamp(40px, 5vw, 64px);
+}
+
+.pb-2h {
+  padding-bottom: clamp(40px, 5vw, 64px);
+}

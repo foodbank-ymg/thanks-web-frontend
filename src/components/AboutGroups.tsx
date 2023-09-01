@@ -3,10 +3,10 @@ import React from 'react'
 
 const AboutGroups = () => {
   return (
-    <div className='h-auto bg-myyellowpale text-center font-body text-mybrown'>
+    <div className='h-auto  bg-myyellowpale text-center'>
       <div className='flex flex-col items-center justify-center'>
         <div className='w-[60%]'>
-          <h1 className='text-mh2'>○○○○○○○○○○</h1>
+          <h1 className=''>○○○○○○○○○○</h1>
           <div className='mt-[-20px] mb-6 rounded-full border-[16px] border-solid border-myyellow'></div>
           <p className='mb-6 break-words'>
             ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
