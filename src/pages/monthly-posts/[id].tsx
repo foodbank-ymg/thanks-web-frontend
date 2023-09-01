@@ -6,6 +6,7 @@ import HeroRect from '@/components/HeroRect'
 import PostList from '@/components/PostList'
 import { GetApprovedPosts } from '@/data/posts'
 import { Post } from '@/types/Post'
+import { YearMonths } from '@/types/YearMonths'
 
 type Props = {
   posts: Post[]
