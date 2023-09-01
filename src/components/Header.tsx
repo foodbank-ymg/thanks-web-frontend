@@ -9,7 +9,8 @@ const links = [
   },
   {
     label: 'これまでのおたより',
-    path: '/#',
+    // TODO: 年月パスを設定する
+    path: '/',
   },
   {
     label: 'このサイトについて',
@@ -21,11 +22,19 @@ const Header = () => {
   return (
     <div>
       <div className='flex flex-row items-center justify-between'>
-        <div className='flex h-[100px] w-[400px] justify-center rounded-br-[32px] bg-myyellow'>
-          <Image src='/img/logo_alt.svg' width={400} height={100} alt='' className='w-[90%]' />
+        <div className='flex h-[48px] w-full items-center justify-center bg-myyellow md:h-[100px] md:w-[400px] md:rounded-br-[36px]'>
+          <Link href='/'>
+            <Image
+              src='/img/logo_alt.svg'
+              width={400}
+              height={100}
+              alt=''
+              className='h-[30px] md:h-[60px]'
+            />
+          </Link>
         </div>
         {/* 横幅が狭い時は出せない、別の表現になる */}
-        <div className='mr-[32px] hidden h-[64px] items-center gap-x-[24px] rounded-[64px] bg-myyellow px-[32px] text-mywhite lg:flex'>
+        <div className='mr-[32px] hidden h-[64px] items-center gap-x-[24px] rounded-full bg-myyellow px-[32px] text-mywhite lg:flex'>
           {links.map((link) => (
             <Link href={link.path} key={link.label}>
               {link.label}

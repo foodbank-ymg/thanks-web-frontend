@@ -3,8 +3,8 @@ import React from 'react'
 
 const HeroLetter = () => {
   return (
-    <div className='h-[70%]'>
-      <div className='relative h-[50%]'>
+    <div className=''>
+      <div className='relative pb-[10%]'>
         {/* <div className='aspect-[1280/540]'> */}
         <Image
           src='/img/hero-letter-bg.jpg'

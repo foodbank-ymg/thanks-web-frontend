@@ -3,8 +3,8 @@ import React from 'react'
 
 const Detail = () => {
   return (
-    <div className='mx-auto w-1/2 text-center font-body text-mybrown'>
-      <h1 className='break-words text-desc lg:whitespace-nowrap lg:text-mlabel'>
+    <div className='mx-auto w-1/2 text-center'>
+      <h1 className='break-words lg:whitespace-nowrap'>
         いただいたカレーのルーで炊き出しをしました。
       </h1>
       <p className='mt-8 mb-16 text-myyellow'>2023.2.20</p>

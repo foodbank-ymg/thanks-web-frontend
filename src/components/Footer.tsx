@@ -1,44 +1,40 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const Footer = () => {
   return (
-    <div className='flex flex-col items-center whitespace-nowrap rounded-[5vw] bg-mybrown px-[44px] py-[32px] text-xl text-white lg:flex-row'>
-      <div className='text-center leading-10 lg:text-left'>
-        <Image src='/img/logo_normal.svg' width='500' height='0' alt='logo' />
-        <h1 className='pt-4 text-3xl font-bold'>特定非営利法人 フードバンク山口</h1>
+    <div className='m-[16px] flex h-auto flex-col gap-8 whitespace-nowrap rounded-[5vw] bg-mybrown p-[32px] text-mywhite md:relative md:m-[32px] md:h-[280px] md:flex-row'>
+      {/* ロゴ */}
+      <div className='static left-[5vw] top-[40px] w-[280px] text-center md:absolute lg:w-[480px] lg:text-left'>
+        <Image src='/img/logo_normal.svg' width='480' height='0' alt='ありがとうWebsiteロゴ' />
+      </div>
+      {/* サイト内リンク */}
+      <div className='flex flex-col gap-y-4 md:absolute md:bottom-[50%] md:right-[5vw] md:translate-y-[50%] lg:ml-auto'>
+        <Link href='/latest-posts'>
+          <span className='mr-2'>▶</span>最近のお便り
+        </Link>
+        {/* TODO: 年月パスを設定する */}
+        <Link href='/' className=''>
+          <span className='mr-2'>▶</span>これまでのお便り
+        </Link>
+        <Link href='/about'>
+          <span className='mr-2'>▶</span>ありがとうWebsiteについて
+        </Link>
+        <Link href='https://fbyamaguchi.org/'>
+          <span className='mr-2'>▶</span>フードバンク山口公式サイト
+        </Link>
+      </div>
+      {/* 連絡先 */}
+      <div className='static left-[5vw] bottom-[40px] text-center md:absolute md:text-left'>
+        <p className='text-[18px]'>特定非営利法人&nbsp;フードバンク山口</p>
         <div className='pt-4'>
           <p>山口市黒川1159-13</p>
-          <div className='flex flex-col md:flex-row'>
+          <div className='flex flex-col justify-start md:flex-row'>
             <p>TEL: 080-3365-9640(事務局)&emsp;</p>
             <p>FAX: 083-963-4157</p>
           </div>
         </div>
-      </div>
-      <div className='ml-0 flex flex-col pt-4 leading-8 lg:ml-auto'>
-        <a href='#' className=''>
-          ▶︎&ensp;最近のお便り
-        </a>
-        <a href='#' className=''>
-          ▶︎&ensp;これまでのお便り
-        </a>
-        <div className='ml-8 leading-[80px]'>
-          <a href='#' className=''>
-            ▶︎2023年&emsp;
-          </a>
-          <a href='#' className=''>
-            ▶︎2023年&emsp;
-          </a>
-          <a href='#' className=''>
-            ▶︎2023年&emsp;
-          </a>
-        </div>
-        <a href='#' className=''>
-          ▶&ensp;ありがとうWebsiteについて
-        </a>
-        <a href='#' className=''>
-          ▶︎&ensp;フードバンク山口公式サイト
-        </a>
       </div>
     </div>
   )
