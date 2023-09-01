@@ -4,6 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 
 import { GetApprovedPosts } from '@/data/posts'
+import { YearMonths } from '@/types/YearMonths'
 
 type Props = {
   yearMonthsList: YearMonths[]
