@@ -3,6 +3,7 @@ import React from 'react'
 
 import Calendars from '@/components/Calendars'
 import HeroRect from '@/components/HeroRect'
+import Month from '@/components/Month'
 import PostList from '@/components/PostList'
 import { GetApprovedPosts } from '@/data/posts'
 import { Post } from '@/types/Post'
@@ -21,7 +22,12 @@ const LatestPostsPage = ({ posts, yearMonthsList }: Props) => {
       <HeroRect>
         <div className='h-[300px] bg-mygray' />
       </HeroRect>
-      <PostList posts={posts} />
+      <div className='pt-2h'>
+        <Month posts={posts} />
+      </div>
+      <div className='pt-h'>
+        <PostList posts={posts} />
+      </div>
       <Calendars yearMonthsList={yearMonthsList} />
     </>
   )
