@@ -12,51 +12,37 @@ import HeroRect from '@/components/HeroRect'
 const AboutPage = () => {
   return (
     <>
-      <Head>
-        <title>フードバンク山口ありがとうWeb</title>
-        <meta
-          name='description'
-          content='フードバンク山口の活動をお知らせるWebサイトです。現在開発中です。'
-        />
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
-        {/* <link rel="icon" href="/favicon.ico" /> */}
-      </Head>
+      {/* 固定ヘッダー */}
+      <div className='fixed z-50 w-full max-w-main'>
+        <Header />
+      </div>
 
-      <main className='mx-auto max-w-main'>
-        {/* 固定ヘッダー */}
-        <div className='fixed z-50 w-full max-w-main'>
-          <Header />
-        </div>
+      {/* ヒーローセクション */}
+      <HeroRect>
+        <h1 className='flex w-[400px] max-w-[400px] flex-col'>
+          <div className='relative h-[100px] w-[400px]'>
+            <Image
+              src='/img/logo_normal.svg'
+              width='400'
+              height='100'
+              alt=''
+              className='absolute z-20 h-full w-full'
+            />
+            <Image
+              src='/img/logo_alt.svg'
+              width='400'
+              height='110'
+              alt=''
+              className='absolute z-20 h-full w-full'
+            />
+          </div>
+          <p>について</p>
+        </h1>
+      </HeroRect>
 
-        {/* ヒーローセクション */}
-        <HeroRect>
-          <h1 className='flex w-[400px] max-w-[400px] flex-col'>
-            <div className='relative h-[100px] w-[400px]'>
-              <Image
-                src='/img/logo_normal.svg'
-                width='400'
-                height='100'
-                alt=''
-                className='absolute z-20 h-full w-full'
-              />
-              <Image
-                src='/img/logo_alt.svg'
-                width='400'
-                height='110'
-                alt=''
-                className='absolute z-20 h-full w-full'
-              />
-            </div>
-            <p>について</p>
-          </h1>
-        </HeroRect>
-
-        <AboutIntroduction />
-        <AboutGroups />
-        <AboutDescription />
-
-        <Footer />
-      </main>
+      <AboutIntroduction />
+      <AboutGroups />
+      <AboutDescription />
     </>
   )
 }
