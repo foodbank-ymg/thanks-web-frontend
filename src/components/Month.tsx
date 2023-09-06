@@ -36,7 +36,7 @@ const Month = ({ monthlyPath, prevYearMonth, nextYearMonth }: Props) => {
             </div>*/}
 
             <div className='relative h-5 w-5 rounded-[50%] bg-mywhite'>
-              <div className='absolute top-[50%] left-[50%] w-[6px] translate-x-[-55%] rotate-45 border border-myyellow'></div>
+              <div className='absolute top-[50%] left-[50%] w-[6px] translate-x-[-55%] translate-y-[50%] rotate-45 border border-myyellow'></div>
               <div className='absolute top-[50%] left-[50%] w-[6px] translate-x-[-55%] translate-y-[-130%] -rotate-45 border border-myyellow'></div>
             </div>
             <p className='text-month py-[1vw] pr-[18px] pl-[12px] tracking-[10px]'>先月</p>
@@ -55,8 +55,8 @@ const Month = ({ monthlyPath, prevYearMonth, nextYearMonth }: Props) => {
           >
             <p className='text-month py-[1vw] pl-[30px] tracking-[10px]'>次月</p>
             <div className='relative h-5 w-5 rounded-[50%] bg-mywhite'>
-              <div className='absolute top-[50%] left-[50%] w-[6px] translate-x-[-45%] -rotate-45 border border-myyellow'></div>
-              <div className='absolute top-[50%] left-[50%] w-[6px] translate-x-[-45%] translate-y-[-130%] rotate-45 border border-myyellow'></div>
+              <div className='absolute top-[50%] left-[50%] w-[6px] translate-x-[-45%] translate-y-[50%] -rotate-45 border border-myyellow'></div>
+              <div className='absolute top-[50%] left-[50%] w-[6px] translate-x-[-45%] translate-y-[-130%] rotate-45 border border-myyellow '></div>
             </div>
           </div>
         </Link>
