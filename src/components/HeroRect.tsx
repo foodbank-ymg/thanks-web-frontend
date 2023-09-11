@@ -1,24 +1,20 @@
-import Image from 'next/image'
 import React from 'react'
 
+import { classNames } from '@/lib/classNames'
+
 type Props = {
+  bgUrl: string
   children: React.ReactNode
 }
 
-const HeroRect = ({ children }: Props) => {
+const HeroRect = ({ bgUrl, children }: Props) => {
   return (
-    <div className=''>
-      <div className=' relative'>
-        {/* <div className='aspect-[1280/540]'> */}
-        <Image
-          src='/img/hero-rect-bg.jpg'
-          width={1280}
-          height={540}
-          alt=''
-          className='object-cover'
-        />
-        <div className='absolute bottom-[50%] right-[50%] z-10 translate-x-[50%] translate-y-[50%]'>
-          <div className='rounded-common bg-mywhite/50 px-[64px] py-[32px]'>{children}</div>
+    <div className={classNames('bg-cover bg-center', bgUrl)}>
+      {/* 固定ヘッダーの高さ */}
+      <div className='md:h-[100px]' />
+      <div className='pt-2h pb-2h mx-auto w-full max-w-[640px] px-[16px]'>
+        <div className='pt-2h pb-2h rounded-common bg-mywhite/80 px-[8px] sm:px-[64px]'>
+          {children}
         </div>
       </div>
     </div>
