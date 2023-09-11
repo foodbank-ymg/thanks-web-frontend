@@ -12,35 +12,18 @@ import HeroRect from '@/components/HeroRect'
 const AboutPage = () => {
   return (
     <>
-      {/* 固定ヘッダー */}
-      <div className='fixed z-50 w-full max-w-main'>
-        <Header />
-      </div>
-
-      {/* ヒーローセクション */}
-      <HeroRect>
-        <h1 className='flex w-[400px] max-w-[400px] flex-col'>
-          <div className='relative h-[100px] w-[400px]'>
-            <Image
-              src='/img/logo_normal.svg'
-              width='400'
-              height='100'
-              alt=''
-              className='absolute z-20 h-full w-full'
-            />
-            <Image
-              src='/img/logo_alt.svg'
-              width='400'
-              height='110'
-              alt=''
-              className='absolute z-20 h-full w-full'
-            />
+      <HeroRect bgUrl="bg-[url('/img/hero-rect-bg.jpg')]">
+        <h1 className='text-hb flex flex-col items-center'>
+          <div className='h-[67px] w-[80vw] max-w-[400px]'>
+            <Image src='/img/logo_mix.svg' width='400' height='100' alt='' className='' />
           </div>
-          <p>について</p>
+          について
         </h1>
       </HeroRect>
 
-      <AboutIntroduction />
+      <div className='bg-myyellow py-[2.5em]'>
+        <AboutIntroduction />
+      </div>
       <AboutGroups />
       <AboutDescription />
     </>

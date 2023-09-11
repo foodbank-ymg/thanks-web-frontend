@@ -131,7 +131,7 @@ const HomePage = ({ posts }: Props) => {
 
       {/* このサイトについてイントロ */}
       <div className='relative pb-[24px] md:pb-[32px]'>
-        <div className='overflow-hidden rounded-b-common bg-myyellow text-center'>
+        <div className='overflow-hidden rounded-b-common bg-myyellow text-center md:pb-[50px]'>
           <div className='relative mx-auto w-fit pt-[5vw]'>
             <h2 className='text-hb relative z-20 px-[16px] align-text-bottom'>
               このサイトについて

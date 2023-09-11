@@ -19,8 +19,14 @@ type Props = {
 const LatestPostsPage = ({ posts, yearMonthsList }: Props) => {
   return (
     <>
-      <HeroRect>
-        <div className='h-[300px] bg-mygray' />
+      <HeroRect bgUrl="bg-[url('/img/hero-post-bg.jpg')]">
+        <div className='text-center'>
+          <h1 className='text-hb mb-[16px]'>最近のおたより</h1>
+          <div className='flex flex-col justify-center md:flex-row'>
+            <p>みなさまから届いた</p>
+            <p>最近のおたよりをまとめています。</p>
+          </div>
+        </div>
       </HeroRect>
       <div className='pt-2h text-center'>
         <h1 className='text-hb'>最近のおたより {LATEST_POSTS_QUANTITY}件</h1>

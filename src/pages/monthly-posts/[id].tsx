@@ -22,8 +22,19 @@ type Props = {
 const MonthlyPostsPage = (props: Props) => {
   return (
     <div>
-      <HeroRect>
-        <div className='h-[300px] bg-mygray' />
+      <HeroRect bgUrl="bg-[url('/img/hero-post-bg.jpg')]">
+        <div className='text-center'>
+          <h1 className='text-hb mb-[16px]'>これまでのおたより</h1>
+          <div className='flex flex-col justify-center md:flex-row'>
+            <p>みなさまから届いた</p>
+            <p>大切なおたよりを、</p>
+            <p>月ごとにまとめています。</p>
+          </div>
+          <div className='flex flex-col justify-center md:flex-row'>
+            <p>ぜひ、あなたあてのおたよりを</p>
+            <p>見つけてみてください。</p>
+          </div>
+        </div>
       </HeroRect>
       <div className='pt-2h'>
         <Month

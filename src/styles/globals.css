@@ -43,6 +43,10 @@
   padding-top: clamp(20px, 2.5vw, 32px);
 }
 
+.pb-h {
+  padding-bottom: clamp(20px, 2.5vw, 32px);
+}
+
 .pt-2h {
   padding-top: clamp(40px, 5vw, 64px);
 }

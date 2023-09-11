@@ -9,7 +9,7 @@ const AboutIntroduction = () => {
           {/* イメージと文章の2段組み */}
           <div className='flex flex-col items-center gap-[5%] md:flex-row'>
             {/* 左島 */}
-            <div className='md:mb-[50px] md:w-[45%]'>
+            <div className='md:w-[45%]'>
               <Image
                 width={952}
                 height={958}
