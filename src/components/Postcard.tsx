@@ -21,8 +21,8 @@ const Postcard = ({ posts, index }: Props) => {
             <div className='relative flex aspect-[1/1] w-[45%] overflow-hidden rounded-cardin sm:w-auto sm:pb-[5vw]'>
               <Image fill src={post.images[0]} alt='' className='object-cover' />
             </div>
-            <div className='flex flex-col items-center bg-smile bg-contain bg-right-bottom bg-no-repeat max-sm:pl-[.75em] sm:bg-left-bottom'>
-              <div className='mx-auto max-w-[240px] pt-[1vw] pb-[3vw] text-left sm:text-center'>
+            <div className='flex flex-col items-center bg-smile bg-right-bottom bg-no-repeat max-sm:w-[55%] max-sm:bg-60% max-sm:pl-[.75em] sm:bg-contain sm:bg-left-bottom'>
+              <div className='mx-auto flex max-w-[240px] pt-[1vw] pb-[3vw] text-left max-sm:h-[80%] max-sm:items-center max-sm:justify-center sm:text-center'>
                 <p className='text-posth'>{post.subject}</p>
               </div>
               <p className='text-postd text-myyellow sm:bottom-0'>{post.recipientGroupName}</p>

@@ -10,7 +10,7 @@ type Props = {
 
 const PostList = ({ posts }: Props) => {
   return (
-    <div className='pt-h grid grid-cols-1 px-4 max-md:gap-y-10 md:grid-cols-2 md:gap-y-4 lg:grid-cols-3'>
+    <div className='pt-h grid grid-cols-1 max-md:gap-y-10 max-sm:px-2 sm:pl-8 md:grid-cols-2 md:gap-y-8 lg:grid-cols-3'>
       {posts.map((post, idx) => (
         // <Link key={idx} href={`/post/${post.id}}`}>
         <Postcard key={idx} posts={posts} index={idx} />
