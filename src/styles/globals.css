@@ -24,6 +24,10 @@
   font-size: clamp(18px, 2vw, 24px);
   border-width: 4px;
 }
+/* 先月・次月*/
+.text-month {
+  font-size: clamp(16px, 2vw, 24px);
+}
 
 /* 投稿見出し */
 .text-posth {
@@ -37,6 +41,10 @@
 
 .pt-h {
   padding-top: clamp(20px, 2.5vw, 32px);
+}
+
+.pb-h {
+  padding-bottom: clamp(20px, 2.5vw, 32px);
 }
 
 .pt-2h {

@@ -9,8 +9,7 @@ const links = [
   },
   {
     label: 'これまでのおたより',
-    // TODO: 年月パスを設定する
-    path: '/',
+    path: '/monthly-posts/latest',
   },
   {
     label: 'このサイトについて',

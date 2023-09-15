@@ -10,15 +10,13 @@ import LinkButtonWhite from '@/components/LinkButtonWhite'
 import LinkButtonYellow from '@/components/LinkButtonYellow'
 import PhotoGallary from '@/components/PhotoGallary'
 import { GetApprovedPosts } from '@/data/posts'
-import { buildMonthlyPath } from '@/pages/monthly-posts/[id]'
 import { Post } from '@/types/Post'
 
 type Props = {
-  latestMonthlyPath: string
   posts: Post[]
 }
 
-const HomePage = ({ latestMonthlyPath, posts }: Props) => {
+const HomePage = ({ posts }: Props) => {
   const router = useRouter()
 
   return (
@@ -52,23 +50,23 @@ const HomePage = ({ latestMonthlyPath, posts }: Props) => {
               </p>
             </div>
           </div>
-          <div className='my-[32px] mx-auto max-w-[672px]'>
+          <div className='my-[32px] mx-auto max-w-[480px]'>
             <p>私たち「フードバンク山口」は、やまぐちでフードバンク活動をしています。</p>
             <p>
               私たちがお手伝いさせていただいた、食料資源を介した繋がりから生まれた“ありがとう”が、
               このサイトに集まりはじめました。
             </p>
           </div>
-          <div className='my-[32px] mx-auto max-w-[672px]'>
+          <div className='my-[32px] mx-auto max-w-[480px]'>
             <p>
               活動ひとつひとつは小さいかもしれませんが、受け取られた方々からとても大きな“ありがとう”をいただいています。
             </p>
             <p>これからもみなさんといっしょに、この活動と“ありがとう”を広めていきます。</p>
           </div>
         </div>
-        {/* 花のアイコンたち */}
-        <div className='absolute right-[15vw] bottom-[-2vw] z-10 w-[8vw] max-w-[110px] rotate-[5deg]'>
-          <Image src='illust_heartflower_l.svg' width='290' height='0' alt='' className=' ' />
+        {/* 花のアイコン */}
+        <div className='absolute right-[16vw] bottom-[-1.5vw] z-10 aspect-[3/4] w-[8vw] min-w-[45px] max-w-[110px] rotate-[5deg]'>
+          <Image src='illust_heartflower_l.svg' fill alt='' className=' ' />
         </div>
       </div>
 
@@ -112,7 +110,7 @@ const HomePage = ({ latestMonthlyPath, posts }: Props) => {
             <div className='absolute bottom-0 z-10 flex w-full justify-center'>
               <LinkButtonWhite
                 label='月ごとのおたよりを見る'
-                onClick={() => router.push(`/monthly-posts/${latestMonthlyPath}`)}
+                onClick={() => router.push(`/monthly-posts/latest`)}
               />
             </div>
           </div>
@@ -120,20 +118,20 @@ const HomePage = ({ latestMonthlyPath, posts }: Props) => {
           <div className='h-[10vw] min-h-[100px]' />
         </div>
         {/* 花のアイコンたち */}
-        <div className='absolute left-[10vw] bottom-[-3.5vw] z-10 w-[15vw] max-w-[290px] rotate-[-5deg]'>
+        <div className='absolute left-[10vw] bottom-[-3.5vw] z-10 aspect-[3/4] w-[12vw] max-w-[290px] rotate-[-5deg]'>
           <Image src='illust_heartflower_l.svg' width='290' height='0' alt='' className=' ' />
         </div>
-        <div className='absolute right-[25vw] bottom-[-1vw] z-10 w-[5vw] max-w-[80px] rotate-[-5deg]'>
+        <div className='absolute right-[25vw] bottom-[-1vw] z-10 aspect-[3/4] w-[5vw] max-w-[80px] rotate-[-5deg]'>
           <Image src='illust_heartflower_l.svg' width='290' height='0' alt='' className=' ' />
         </div>
-        <div className='absolute right-[15vw] bottom-[-2vw] z-10 w-[8vw] max-w-[110px] rotate-[5deg]'>
+        <div className='absolute right-[15vw] bottom-[-1.5vw] z-10 aspect-[3/4] w-[8vw] max-w-[110px] rotate-[5deg]'>
           <Image src='illust_heartflower_r.svg' width='290' height='0' alt='' className=' ' />
         </div>
       </div>
 
       {/* このサイトについてイントロ */}
       <div className='relative pb-[24px] md:pb-[32px]'>
-        <div className='overflow-hidden rounded-b-common bg-myyellow text-center'>
+        <div className='overflow-hidden rounded-b-common bg-myyellow text-center md:pb-[50px]'>
           <div className='relative mx-auto w-fit pt-[5vw]'>
             <h2 className='text-hb relative z-20 px-[16px] align-text-bottom'>
               このサイトについて
@@ -161,22 +159,10 @@ const HomePage = ({ latestMonthlyPath, posts }: Props) => {
 export default HomePage
 
 export const getStaticProps: GetStaticProps = async () => {
-  // 現在時刻の月ではない直近投稿が直近の月次ページ
-  const now = moment().utcOffset(9).toDate()
-  const nowMonth = buildMonthlyPath(`${now.getFullYear()}-${now.getMonth() + 1}`)
-
-  let latestMonthlyPath = ''
   let posts = await GetApprovedPosts()
-  posts.forEach((post) => {
-    const postMonthlyPath = buildMonthlyPath(post.createdAt)
-    if (latestMonthlyPath === '' && postMonthlyPath !== nowMonth) {
-      latestMonthlyPath = postMonthlyPath
-    }
-  })
 
   return {
     props: {
-      latestMonthlyPath,
       posts,
     },
   }

@@ -15,14 +15,14 @@ const Postcard = ({ posts, index }: Props) => {
 
   return (
     <div className='relative max-w-[360px] md:w-[28vw]'>
-      <div className='relative z-10 h-full w-full rounded-cardout bg-white'>
+      <div className='relative z-10 h-full w-full rounded-cardout bg-white max-sm:p-[.75em]'>
         <Link href={`/post/${post.id}`}>
-          <div className='flex h-full w-full flex-row p-[1.25vw] sm:flex-col '>
+          <div className='flex h-full w-full flex-row sm:flex-col sm:p-[1.25vw]'>
             <div className='relative flex aspect-[1/1] w-[45%] overflow-hidden rounded-cardin sm:w-auto sm:pb-[5vw]'>
               <Image fill src={post.images[0]} alt='' className='object-cover' />
             </div>
-            <div className='flex flex-col items-center bg-smile bg-contain bg-right-bottom bg-no-repeat sm:bg-left-bottom'>
-              <div className='mx-auto max-w-[240px] pt-[1vw] pb-[3vw] text-center sm:text-left'>
+            <div className='flex flex-col items-center bg-smile bg-contain bg-right-bottom bg-no-repeat max-sm:pl-[.75em] sm:bg-left-bottom'>
+              <div className='mx-auto max-w-[240px] pt-[1vw] pb-[3vw] text-left sm:text-center'>
                 <p className='text-posth'>{post.subject}</p>
               </div>
               <p className='text-postd text-myyellow sm:bottom-0'>{post.recipientGroupName}</p>

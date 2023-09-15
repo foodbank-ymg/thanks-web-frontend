@@ -58,15 +58,7 @@ const PostPage = ({ initialPost, allPosts }: Props) => {
 
   return (
     <>
-      <Head>
-        <title>フードバンク山口ありがとうWeb</title>
-        <meta
-          name='description'
-          content='フードバンク山口の活動をお知らせるWebサイトです。現在開発中です。'
-        />
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
-      </Head>
-      <main className='mx-auto max-w-main'>
+      <div className='mx-auto max-w-main'>
         {/* 固定ヘッダー */}
         <div className='fixed z-50 w-full max-w-main'>
           <Header />
@@ -136,7 +128,7 @@ const PostPage = ({ initialPost, allPosts }: Props) => {
         <div className='bg-myyellowpale'>
           <Footer />
         </div>
-      </main>
+      </div>
     </>
   )
 }

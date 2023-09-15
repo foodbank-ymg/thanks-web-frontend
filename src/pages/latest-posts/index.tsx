@@ -5,6 +5,7 @@ import Calendars from '@/components/Calendars'
 import HeroRect from '@/components/HeroRect'
 import PostList from '@/components/PostList'
 import { GetApprovedPosts } from '@/data/posts'
+import { biuldYearMonthsList } from '@/lib/posts'
 import { Post } from '@/types/Post'
 import { YearMonths } from '@/types/YearMonths'
 
@@ -18,10 +19,21 @@ type Props = {
 const LatestPostsPage = ({ posts, yearMonthsList }: Props) => {
   return (
     <>
-      <HeroRect>
-        <div className='h-[300px] bg-mygray' />
+      <HeroRect bgUrl="bg-[url('/img/hero-post-bg.jpg')]">
+        <div className='text-center'>
+          <h1 className='text-hb mb-[16px]'>最近のおたより</h1>
+          <div className='flex flex-col justify-center md:flex-row'>
+            <p>みなさまから届いた</p>
+            <p>最近のおたよりをまとめています。</p>
+          </div>
+        </div>
       </HeroRect>
-      <PostList posts={posts} />
+      <div className='pt-2h text-center'>
+        <h1 className='text-hb'>最近のおたより {LATEST_POSTS_QUANTITY}件</h1>
+      </div>
+      <div className='pt-h'>
+        <PostList posts={posts} />
+      </div>
       <Calendars yearMonthsList={yearMonthsList} />
     </>
   )
@@ -35,28 +47,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const posts = posts_.slice(0, Math.min(posts_.length, LATEST_POSTS_QUANTITY))
 
   // カレンダー年月
-  const yearMonthsList: YearMonths[] = []
-  posts.forEach((post) => {
-    // e.g. 2023.9.1, 2023.10.31
-    const numbers = post.createdAt.split('.')
-    // 投稿の年
-    const year = Number(numbers[0])
-    let yearMonths = yearMonthsList.find((current) => current.year === year)
-    if (!yearMonths) {
-      yearMonths = {
-        year,
-        months: [],
-      }
-      // 新しい年は後尾に追加（降順になる）
-      yearMonthsList.push(yearMonths)
-    }
-    // 投稿の月
-    const month = Number(numbers[1])
-    if (!yearMonths.months.includes(month)) {
-      // 新しい月は先頭に追加（昇順になる）
-      yearMonths.months.unshift(month)
-    }
-  })
+  const yearMonthsList: YearMonths[] = biuldYearMonthsList(posts_)
 
   return {
     props: {
