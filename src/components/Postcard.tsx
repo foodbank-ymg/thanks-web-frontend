@@ -14,7 +14,7 @@ const Postcard = ({ posts, index }: Props) => {
   const post = posts[index]
 
   return (
-    <div className='relative max-w-[360px] md:w-[28vw]'>
+    <div className='relative max-w-[360px] sm:w-[26vw] md:w-[28vw]'>
       <div className='relative z-10 h-full w-full rounded-cardout bg-white max-sm:p-[.75em]'>
         <Link href={`/post/${post.id}`}>
           <div className='flex h-full w-full flex-row sm:flex-col sm:p-[1.25vw]'>
