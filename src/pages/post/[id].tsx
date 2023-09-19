@@ -1,10 +1,8 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
-import Head from 'next/head'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
-import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import HeroPost from '@/components/HeroPost'
 import LinkButtonWhite from '@/components/LinkButtonWhite'
@@ -28,7 +26,7 @@ const PostPage = ({ initialPost, allPosts }: Props) => {
 
   const moves = [
     {
-      label: '前のおたより',
+      label: '次のおたより',
       arrowImage: '/img/arrow_right.svg',
       arrowRotate: 'rotate-180',
       arrowShift: 'mr-1',
@@ -44,7 +42,7 @@ const PostPage = ({ initialPost, allPosts }: Props) => {
       disabled: (post: PostWithNeighbor) => !allPosts || post.index === 0,
     },
     {
-      label: '次のおたより',
+      label: '前のおたより',
       arrowImage: '/img/arrow_right.svg',
       arrowRotate: '',
       arrowShift: 'ml-1',
@@ -59,11 +57,6 @@ const PostPage = ({ initialPost, allPosts }: Props) => {
   return (
     <>
       <div className='mx-auto max-w-main'>
-        {/* 固定ヘッダー */}
-        <div className='fixed z-50 w-full max-w-main'>
-          <Header />
-        </div>
-
         <HeroPost />
 
         {/* 投稿 */}
@@ -123,10 +116,6 @@ const PostPage = ({ initialPost, allPosts }: Props) => {
               <p className='text-h'>{move.label}</p>
             </div>
           ))}
-        </div>
-
-        <div className='bg-myyellowpale'>
-          <Footer />
         </div>
       </div>
     </>
