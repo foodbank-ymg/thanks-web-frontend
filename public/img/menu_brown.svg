@@ -1,0 +1,16 @@
+<svg id="コンポーネント_6_1" data-name="コンポーネント 6 – 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="64" viewBox="0 0 60 64">
+  <defs>
+    <filter id="パス_5" x="0" y="0" width="60" height="64" filterUnits="userSpaceOnUse">
+      <feOffset dy="4" input="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#パス_5)">
+    <path id="パス_5-2" data-name="パス 5" d="M30,0A30,30,0,1,1,0,30,30,30,0,0,1,30,0Z" fill="#600"/>
+  </g>
+  <text id="ME_NU" data-name="ME
+NU" transform="translate(30 28)" fill="#f8b62b" font-size="16" font-family="Helvetica" letter-spacing="0.2em"><tspan x="-13.6" y="0">ME</tspan><tspan x="-13.155" y="16">NU</tspan></text>
+</svg>

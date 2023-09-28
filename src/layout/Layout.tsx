@@ -3,6 +3,7 @@ import React from 'react'
 
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+import Menu from '@/components/Menu'
 
 type Props = {
   children: React.ReactElement
@@ -41,6 +42,10 @@ const Layout = ({ children }: Props) => (
       </div>
       {children}
       <Footer />
+      {/* 固定メニュー  */}
+      <div className='fixed left-0 bottom-0 z-50 w-full lg:hidden'>
+        <Menu />
+      </div>
     </div>
   </>
 )

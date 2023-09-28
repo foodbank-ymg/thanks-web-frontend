@@ -32,6 +32,7 @@ module.exports = {
     },
     backgroundImage: {
       smile: "url('/img/smile.svg')",
+      smilewhite: "url('/img/smile_white.svg')",
       texture: "url('/img/texture.png')",
       mail: "url('/img/letter.svg')",
     },
