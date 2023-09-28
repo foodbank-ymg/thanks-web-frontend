@@ -17,8 +17,8 @@ const Detail = () => {
         ああああああああああああああああああああ
       </p>
       <div className='flex justify-center'>
-        <Image src='illust_heartflower_r.svg' width='200' height='0' alt='logo' className='w-1/2' />
-        <Image src='illust_heartflower_r.svg' width='200' height='0' alt='logo' className='w-1/2' />
+        <Image src='/img/flower_r.svg' width='200' height='0' alt='logo' className='w-1/2' />
+        <Image src='/img/flower_r.svg' width='200' height='0' alt='logo' className='w-1/2' />
       </div>
     </div>
   )

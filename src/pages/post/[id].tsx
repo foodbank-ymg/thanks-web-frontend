@@ -1,10 +1,8 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
-import Head from 'next/head'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
-import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import HeroPost from '@/components/HeroPost'
 import LinkButtonWhite from '@/components/LinkButtonWhite'
@@ -28,7 +26,7 @@ const PostPage = ({ initialPost, allPosts }: Props) => {
 
   const moves = [
     {
-      label: '前のおたより',
+      label: '次のおたより',
       arrowImage: '/img/arrow_right.svg',
       arrowRotate: 'rotate-180',
       arrowShift: 'mr-1',
@@ -44,7 +42,7 @@ const PostPage = ({ initialPost, allPosts }: Props) => {
       disabled: (post: PostWithNeighbor) => !allPosts || post.index === 0,
     },
     {
-      label: '次のおたより',
+      label: '前のおたより',
       arrowImage: '/img/arrow_right.svg',
       arrowRotate: '',
       arrowShift: 'ml-1',
@@ -58,20 +56,7 @@ const PostPage = ({ initialPost, allPosts }: Props) => {
 
   return (
     <>
-      <Head>
-        <title>フードバンク山口ありがとうWeb</title>
-        <meta
-          name='description'
-          content='フードバンク山口の活動をお知らせるWebサイトです。現在開発中です。'
-        />
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
-      </Head>
-      <main className='mx-auto max-w-main'>
-        {/* 固定ヘッダー */}
-        <div className='fixed z-50 w-full max-w-main'>
-          <Header />
-        </div>
-
+      <div className='mx-auto max-w-main'>
         <HeroPost />
 
         {/* 投稿 */}
@@ -132,11 +117,7 @@ const PostPage = ({ initialPost, allPosts }: Props) => {
             </div>
           ))}
         </div>
-
-        <div className='bg-myyellowpale'>
-          <Footer />
-        </div>
-      </main>
+      </div>
     </>
   )
 }

@@ -1,26 +1,52 @@
+import moment from 'moment'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import React from 'react'
 
 import Calendars from '@/components/Calendars'
 import HeroRect from '@/components/HeroRect'
+import Month from '@/components/Month'
 import PostList from '@/components/PostList'
 import { GetApprovedPosts } from '@/data/posts'
+import { biuldYearMonthsList } from '@/lib/posts'
 import { Post } from '@/types/Post'
 import { YearMonths } from '@/types/YearMonths'
 
 type Props = {
+  monthlyPath: string
+  prevMonthlyPath: string
+  nextMonthlyPath: string
   posts: Post[]
   yearMonthsList: YearMonths[]
 }
 
-const MonthlyPostsPage = ({ posts, yearMonthsList }: Props) => {
+const MonthlyPostsPage = (props: Props) => {
   return (
     <div>
-      <HeroRect>
-        <div className='h-[300px] bg-mygray' />
+      <HeroRect bgUrl="bg-[url('/img/hero-post-bg.jpg')]">
+        <div className='text-center'>
+          <h1 className='text-hb mb-[16px]'>これまでのおたより</h1>
+          <div className='flex flex-col justify-center md:flex-row'>
+            <p>みなさまから届いた</p>
+            <p>大切なおたよりを、</p>
+            <p>月ごとにまとめています。</p>
+          </div>
+          <div className='flex flex-col justify-center md:flex-row'>
+            <p>ぜひ、あなたあてのおたよりを</p>
+            <p>見つけてみてください。</p>
+          </div>
+        </div>
       </HeroRect>
-      <PostList posts={posts} />
-      <Calendars yearMonthsList={yearMonthsList} />
+      <div className='pt-2h'>
+        <Month
+          monthlyPath={props.monthlyPath}
+          prevYearMonth={props.prevMonthlyPath}
+          nextYearMonth={props.nextMonthlyPath}
+        />
+      </div>
+      <div className='pt-h'>
+        <PostList posts={props.posts} />
+      </div>
+      <Calendars yearMonthsList={props.yearMonthsList} />
     </div>
   )
 }
@@ -28,41 +54,60 @@ const MonthlyPostsPage = ({ posts, yearMonthsList }: Props) => {
 export default MonthlyPostsPage
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const id = params?.id as string
-
+  let monthlyPath = params?.id as string
+  console.log(`monthlyPath: ${monthlyPath}`)
   // 投稿データ
   let posts_ = await GetApprovedPosts()
+
+  // 年月指定のないパスは、当月ではない最初の投稿を対象とする（だいたい先月になるはず）
+  if (monthlyPath === 'latest') {
+    const nowAt = moment(new Date()).format('YYYY.MM.DD')
+    const prev = posts_.find((post) => {
+      return dateToPath(post.createdAt) !== dateToPath(nowAt)
+    })
+    if (prev) {
+      monthlyPath = dateToPath(prev.createdAt)
+    }
+  }
+
   // 月別の投稿
   const posts = posts_.filter((post) => {
-    return buildMonthlyPath(post.createdAt) === id
+    return dateToPath(post.createdAt) === monthlyPath
   })
+  // 年月指定がない
 
   // カレンダー年月
-  const yearMonthsList: YearMonths[] = []
-  posts_.forEach((post) => {
-    // e.g. 2023.9.1, 2023.10.31
-    const numbers = post.createdAt.split('.')
-    // 投稿の年
-    const year = Number(numbers[0])
-    let yearMonths = yearMonthsList.find((current) => current.year === year)
-    if (!yearMonths) {
-      yearMonths = {
-        year,
-        months: [],
+  const yearMonthsList: YearMonths[] = biuldYearMonthsList(posts_)
+  let prevMonthlyPath = ''
+  let nextMonthlyPath = ''
+  let prevCandidate = ''
+  let nextSetFlag = false
+  yearMonthsList.forEach((yearMonth) => {
+    yearMonth.months.forEach((month) => {
+      // 当月
+      if (numberToPath(yearMonth.year, month) === monthlyPath) {
+        // 先月候補があればセット
+        if (prevCandidate) {
+          prevMonthlyPath = prevCandidate
+        }
+        nextSetFlag = true
+      } else {
+        // 先月候補を覚えておく
+        prevCandidate = numberToPath(yearMonth.year, month)
+        // 当月の直後に次月をセット
+        if (nextSetFlag) {
+          nextMonthlyPath = numberToPath(yearMonth.year, month)
+          nextSetFlag = false
+        }
       }
-      // 新しい年は後尾に追加（降順になる）
-      yearMonthsList.push(yearMonths)
-    }
-    // 投稿の月
-    const month = Number(numbers[1])
-    if (!yearMonths.months.includes(month)) {
-      // 新しい月は先頭に追加（昇順になる）
-      yearMonths.months.unshift(month)
-    }
+    })
   })
 
   return {
     props: {
+      monthlyPath,
+      prevMonthlyPath,
+      nextMonthlyPath,
       posts,
       yearMonthsList,
     },
@@ -70,10 +115,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const yearMonths: string[] = []
+  // 年月指定のないパス（メニューやフッターのリンク）も候補として入れておく
+  const yearMonths: string[] = ['latest']
   let posts = await GetApprovedPosts()
   posts.forEach((post) => {
-    const path = buildMonthlyPath(post.createdAt)
+    const path = dateToPath(post.createdAt)
     if (!yearMonths.includes(path)) {
       yearMonths.push(path)
     }
@@ -93,6 +139,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-export const buildMonthlyPath = (date: string): string => {
+export const dateToPath = (date: string): string => {
   return date.split('.').slice(0, 2).join('-')
+}
+
+export const numberToPath = (year: number, month: number): string => {
+  return `${year}-${month}`
 }

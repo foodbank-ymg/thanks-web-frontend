@@ -12,51 +12,20 @@ import HeroRect from '@/components/HeroRect'
 const AboutPage = () => {
   return (
     <>
-      <Head>
-        <title>フードバンク山口ありがとうWeb</title>
-        <meta
-          name='description'
-          content='フードバンク山口の活動をお知らせるWebサイトです。現在開発中です。'
-        />
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
-        {/* <link rel="icon" href="/favicon.ico" /> */}
-      </Head>
+      <HeroRect bgUrl="bg-[url('/img/hero-rect-bg.jpg')]">
+        <h1 className='text-hb flex flex-col items-center'>
+          <div className='h-[67px] w-[80vw] max-w-[400px]'>
+            <Image src='/img/logo_mix.svg' width='400' height='100' alt='' className='' />
+          </div>
+          について
+        </h1>
+      </HeroRect>
 
-      <main className='mx-auto max-w-main'>
-        {/* 固定ヘッダー */}
-        <div className='fixed z-50 w-full max-w-main'>
-          <Header />
-        </div>
-
-        {/* ヒーローセクション */}
-        <HeroRect>
-          <h1 className='flex w-[400px] max-w-[400px] flex-col'>
-            <div className='relative h-[100px] w-[400px]'>
-              <Image
-                src='/img/logo_normal.svg'
-                width='400'
-                height='100'
-                alt=''
-                className='absolute z-20 h-full w-full'
-              />
-              <Image
-                src='/img/logo_alt.svg'
-                width='400'
-                height='110'
-                alt=''
-                className='absolute z-20 h-full w-full'
-              />
-            </div>
-            <p>について</p>
-          </h1>
-        </HeroRect>
-
+      <div className='bg-myyellow py-[2.5em]'>
         <AboutIntroduction />
-        <AboutGroups />
-        <AboutDescription />
-
-        <Footer />
-      </main>
+      </div>
+      <AboutGroups />
+      <AboutDescription />
     </>
   )
 }

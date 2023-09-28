@@ -9,19 +9,19 @@ const AboutIntroduction = () => {
           {/* イメージと文章の2段組み */}
           <div className='flex flex-col items-center gap-[5%] md:flex-row'>
             {/* 左島 */}
-            <div className='md:mb-[50px] md:w-[45%]'>
+            <div className='md:w-[45%]'>
               <Image
                 width={952}
                 height={958}
                 className='hidden md:block'
-                src='/conglo_@l.png'
+                src='/img/conglo_l.png'
                 alt='徳山高専とデジテックforYamaguchiとフードバンク山口'
               />
               <Image
                 width={964}
                 height={558}
                 className='md:hidden'
-                src='/conglo_@s.png'
+                src='/img/conglo_s.png'
                 alt='徳山高専とデジテックforYamaguchiとフードバンク山口'
               />
             </div>

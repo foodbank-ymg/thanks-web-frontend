@@ -18,8 +18,10 @@ module.exports = {
       },
       borderRadius: {
         common: '5vw',
-        cardout: '2.5vw',
-        cardin: '1.5vw',
+        cardoutl: '2.5vw',
+        cardouts: '5vw',
+        cardinl: '1.5vw',
+        cardins: '3vw',
       },
       maxWidth: {
         main: '1280px',
@@ -29,8 +31,10 @@ module.exports = {
       },
     },
     backgroundImage: {
-      smile: "url('/item_smile_opa20_rot-20.svg')",
-      mail: "url('/Illust_letter.svg')",
+      smile: "url('/img/smile.svg')",
+      smilewhite: "url('/img/smile_white.svg')",
+      texture: "url('/img/texture.png')",
+      mail: "url('/img/letter.svg')",
     },
     backgroundSize: {
       auto: 'auto',

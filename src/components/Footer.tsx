@@ -14,8 +14,7 @@ const Footer = () => {
         <Link href='/latest-posts'>
           <span className='mr-2'>▶</span>最近のお便り
         </Link>
-        {/* TODO: 年月パスを設定する */}
-        <Link href='/' className=''>
+        <Link href='/monthly-posts/latest' className=''>
           <span className='mr-2'>▶</span>これまでのお便り
         </Link>
         <Link href='/about'>
