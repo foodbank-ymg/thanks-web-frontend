@@ -66,7 +66,7 @@ const HomePage = ({ posts }: Props) => {
         </div>
         {/* 花のアイコン */}
         <div className='absolute right-[16vw] bottom-[-1.5vw] z-10 aspect-[3/4] w-[8vw] min-w-[45px] max-w-[110px] rotate-[5deg]'>
-          <Image src='illust_heartflower_l.svg' fill alt='' className=' ' />
+          <Image src='/img/flower_l.svg' fill alt='' className=' ' />
         </div>
       </div>
 
@@ -119,13 +119,13 @@ const HomePage = ({ posts }: Props) => {
         </div>
         {/* 花のアイコンたち */}
         <div className='absolute left-[10vw] bottom-[-3.5vw] z-10 aspect-[3/4] w-[12vw] max-w-[290px] rotate-[-5deg]'>
-          <Image src='illust_heartflower_l.svg' width='290' height='0' alt='' className=' ' />
+          <Image src='/img/flower_l.svg' width='290' height='0' alt='' className=' ' />
         </div>
         <div className='absolute right-[25vw] bottom-[-1vw] z-10 aspect-[3/4] w-[5vw] max-w-[80px] rotate-[-5deg]'>
-          <Image src='illust_heartflower_l.svg' width='290' height='0' alt='' className=' ' />
+          <Image src='/img/flower_l.svg' width='290' height='0' alt='' className=' ' />
         </div>
         <div className='absolute right-[15vw] bottom-[-1.5vw] z-10 aspect-[3/4] w-[8vw] max-w-[110px] rotate-[5deg]'>
-          <Image src='illust_heartflower_r.svg' width='290' height='0' alt='' className=' ' />
+          <Image src='/img/flower_r.svg' width='290' height='0' alt='' className=' ' />
         </div>
       </div>
 

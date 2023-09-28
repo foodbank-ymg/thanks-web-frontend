@@ -16,7 +16,7 @@ const Month = ({ monthlyPath, prevYearMonth, nextYearMonth }: Props) => {
     <div className=''>
       <div className='relative'>
         <Image
-          src='/Illust_letter.svg'
+          src='/img/letter.svg'
           width={40}
           height={20}
           alt=''

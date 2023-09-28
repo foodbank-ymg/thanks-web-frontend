@@ -1,9 +1,7 @@
-import { GetStaticProps } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-import { GetApprovedPosts } from '@/data/posts'
 import { YearMonths } from '@/types/YearMonths'
 
 type Props = {
@@ -14,18 +12,17 @@ const Calendars = ({ yearMonthsList }: Props) => {
   return (
     <>
       {/* 花のアイコンたち */}
-      {/* TODO: 表示されないので後でやる */}
-      <div className='relative h-[100px]'>
+      <div className='relative h-[100px] overflow-hidden'>
         <div className='absolute right-[25vw] bottom-[-1vw] z-10 w-[5vw] max-w-[80px] rotate-[-5deg]'>
-          <Image src='illust_heartflower_l.svg' width='290' height='0' alt='' className=' ' />
+          <Image src='/img/flower_l.svg' width={289} height={372} alt='' className=' ' />
         </div>
         <div className='absolute right-[15vw] bottom-[-2vw] z-10 w-[8vw] max-w-[110px] rotate-[5deg]'>
-          <Image src='illust_heartflower_r.svg' width='290' height='0' alt='' className=' ' />
+          <Image src='/img/flower_r.svg' width={289} height={372} alt='' className=' ' />
         </div>
       </div>
 
       {/* 年毎のカレンダー */}
-      <div className='mb-[48px] flex flex-col gap-[16px] md:gap-[32px]'>
+      <div className='mb-[48px] flex flex-col gap-[16px] text-[20px] md:gap-[32px] md:text-[24px]'>
         {yearMonthsList.map((yearMonths, idx) => (
           <div
             key={idx}
@@ -41,7 +38,7 @@ const Calendars = ({ yearMonthsList }: Props) => {
                   key={`${yearMonths.year}-${month}`}
                   className=''
                 >
-                  <p className='py-4 text-center'>{month}月</p>
+                  <p className='cursor-pointer py-4 text-center'>{month}月</p>
                 </Link>
               ))}
             </div>

@@ -14,14 +14,14 @@ const AboutIntroduction = () => {
                 width={952}
                 height={958}
                 className='hidden md:block'
-                src='/conglo_@l.png'
+                src='/img/conglo_l.png'
                 alt='徳山高専とデジテックforYamaguchiとフードバンク山口'
               />
               <Image
                 width={964}
                 height={558}
                 className='md:hidden'
-                src='/conglo_@s.png'
+                src='/img/conglo_s.png'
                 alt='徳山高専とデジテックforYamaguchiとフードバンク山口'
               />
             </div>
