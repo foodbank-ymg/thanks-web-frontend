@@ -17,7 +17,7 @@ const Postcard = ({ posts, index, isMobileHorizontal }: Props) => {
   return (
     <div
       className={classNames(
-        'w-full px-[16px] pb-[24px]',
+        'w-full p-0 px-[16px] sm:pb-[24px]',
         !isMobileHorizontal && 'sm:w-[28vw] sm:max-w-[360px] sm:px-0',
       )}
     >

@@ -31,8 +31,10 @@ module.exports = {
       },
     },
     backgroundImage: {
-      smile: "url('/item_smile_opa10_rot-20.svg')",
-      mail: "url('/Illust_letter.svg')",
+      smile: "url('/img/smile.svg')",
+      smilewhite: "url('/img/smile_white.svg')",
+      texture: "url('/img/texture.png')",
+      mail: "url('/img/letter.svg')",
     },
     backgroundSize: {
       auto: 'auto',
