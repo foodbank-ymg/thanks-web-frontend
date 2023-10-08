@@ -79,13 +79,13 @@ const PostPage = ({ initialPost, allPosts }: Props) => {
               {/* 本文エリア */}
               <p className='w-full py-8 text-left lg:py-16'>{post.body}</p>
               {/* 画像エリア */}
-              <div className='max-h-[370px] min-h-[224px] min-w-[224px] max-w-[370px] pb-[48px]'>
+              <div className='flex max-h-[370px] min-h-[224px] min-w-[224px] max-w-[370px] justify-center pb-[48px]'>
                 <Image
                   src={post.images[0]}
                   width={370}
                   height={370}
                   alt=''
-                  className='object-cover'
+                  className='h-[300px] w-auto object-cover'
                 />
               </div>
             </div>
