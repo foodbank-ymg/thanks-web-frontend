@@ -62,7 +62,7 @@ const PostPage = ({ initialPost, allPosts }: Props) => {
         {/* 投稿 */}
         <div className='relative pb-[24px] md:pb-[32px]'>
           <div className='rounded-b-common bg-mywhite pb-common drop-shadow-[0_4px_4px_rgba(0,0,0,0.05)] md:drop-shadow-[0_13px_13px_rgba(0,0,0,0.05)]'>
-            <div className='mx-auto flex max-w-screen-md flex-col items-center rounded-b-common px-4 lg:px-0'>
+            <div className='mx-auto mb-[48px] flex max-w-screen-md flex-col items-center rounded-b-common px-4 lg:px-0'>
               {/* 見出しエリア */}
               <p className='text-myyellow'>{post.recipientGroupName}</p>
               <h1 className='text-h my-[16px] break-words px-[24px] text-center lg:whitespace-nowrap'>
@@ -72,14 +72,8 @@ const PostPage = ({ initialPost, allPosts }: Props) => {
               {/* 本文エリア */}
               <p className='w-full py-8 text-left lg:py-16'>{post.body}</p>
               {/* 画像エリア */}
-              <div className='max-h-[370px] min-h-[224px] min-w-[224px] max-w-[370px] pb-[48px]'>
-                <Image
-                  src={post.images[0]}
-                  width={370}
-                  height={370}
-                  alt=''
-                  className='object-cover'
-                />
+              <div className='relative flex min-h-[320px] w-full min-w-[320px] justify-center md:min-h-[480px] md:min-w-[480px]'>
+                <Image src={post.images[0]} fill alt='' className='object-contain' />
               </div>
             </div>
           </div>

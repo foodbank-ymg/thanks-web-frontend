@@ -55,7 +55,6 @@ export default MonthlyPostsPage
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   let monthlyPath = params?.id as string
-  console.log(`monthlyPath: ${monthlyPath}`)
   // 投稿データ
   let posts_ = await GetApprovedPosts()
 
@@ -140,7 +139,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const dateToPath = (date: string): string => {
-  return date.split('.').slice(0, 2).join('-')
+  const ymd = date.split('.').slice(0, 2)
+  return `${ymd[0]}-${Number(ymd[1])}`
 }
 
 export const numberToPath = (year: number, month: number): string => {
