@@ -55,8 +55,8 @@ const AboutDescription = () => {
   }
 
   return (
-    <div className='bg-myyellowpale'>
-      <div className='rounded-common bg-white p-[5em]'>
+    <div className='bg-myyellowpale p-[2.5em]'>
+      <div className='rounded-common bg-white p-[2.5em]'>
         {descContents.map((cont, indx) => (
           <div key={indx}>{renderDescContent(cont, indx)}</div>
         ))}

@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React from 'react'
 
@@ -32,7 +31,13 @@ const Menu = () => {
           !isOpen && 'hidden',
         )}
       >
-        <div className='bg-mybrown py-[16px]'>
+        <div
+          className='bg-mybrown py-[16px]'
+          onClick={() => {
+            setIsOpen(false)
+            router.push('/')
+          }}
+        >
           <Image
             src='/img/logo_normal.svg'
             width={261}
@@ -58,7 +63,6 @@ const Menu = () => {
                 </button>
               ))}
             </div>
-            {/* <div className='relative h-[48px]'> */}
             <Image
               src='/img/flower_brown_s.svg'
               width={21}
@@ -73,7 +77,6 @@ const Menu = () => {
               alt=''
               className='absolute bottom-[-4px] right-[10vw]'
             />
-            {/* </div> */}
           </div>
         </div>
       </div>

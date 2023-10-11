@@ -4,21 +4,14 @@ import React from 'react'
 const HeroLetter = () => {
   return (
     <div className=''>
-      <div className='relative pb-[10%]'>
-        {/* <div className='aspect-[1280/540]'> */}
-        <Image
-          src='/img/hero-letter-bg.jpg'
-          width={1280}
-          height={640}
-          alt=''
-          className='object-cover'
-        />
+      <div className='relative aspect-video'>
+        <Image src='/img/hero-letter-bg.jpg' fill alt='' className='aspect-video object-cover' />
         {/* </div> */}
         <Image
           src='/img/hero-letter-cover.svg'
           width={1280}
           height={256}
-          className='absolute bottom-0 z-10'
+          className='absolute bottom-0 w-full'
           alt=''
         />
         <Image

@@ -9,7 +9,6 @@ const AboutGroups = () => {
           <p className='text-h z-10 px-[0.5em] after:absolute after:inset-0 after:z-[-10] after:h-[0.75em] after:translate-y-[1em] after:rounded-full after:bg-myyellow'>
             関わっている団体
           </p>
-          {/* <div className='mt-[-20px] mb-6 rounded-full border-[12px] border-solid border-myyellow'></div> */}
           <p className='mb-6 break-words'>
             当サイトは、デジタル技術を活用して地域課題の解決等に取り組むコミュニティ「デジテック for
             YAMAGUCHI」の共創プロジェクト二より作成されました。徳山高専の学生が中心となって開発を行いました。
