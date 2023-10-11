@@ -1,9 +1,8 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
-import Header from '@/components/Header'
 import HeroPost from '@/components/HeroPost'
 import LinkButtonWhite from '@/components/LinkButtonWhite'
 import { GetApprovedPosts } from '@/data/posts'
@@ -30,12 +29,12 @@ const PostPage = ({ initialPost, allPosts }: Props) => {
       arrowImage: '/img/arrow_right.svg',
       arrowRotate: 'rotate-180',
       arrowShift: 'mr-1',
-      onClick: (post: PostWithNeighbor) => {
+      onClick: (post: PostWithNeighbor, isDirect: boolean) => {
         if (post.index === 0) {
           return
         }
         if (allPosts && post.index > 0) {
-          router.replace(`/post/${allPosts[post.index - 1].id}`)
+          router.replace(`/post/${allPosts[post.index - 1].id}${isDirect ? '?direct=1' : ''}`)
           setPost(allPosts[post.index - 1])
         }
       },
@@ -46,23 +45,31 @@ const PostPage = ({ initialPost, allPosts }: Props) => {
       arrowImage: '/img/arrow_right.svg',
       arrowRotate: '',
       arrowShift: 'ml-1',
-      onClick: (post: PostWithNeighbor) => {
-        router.replace(`/post/${allPosts[post.index + 1].id}`)
+      onClick: (post: PostWithNeighbor, isDirect: boolean) => {
+        router.replace(`/post/${allPosts[post.index + 1].id}${isDirect ? '?direct=1' : ''}`)
         setPost(allPosts[post.index + 1])
       },
       disabled: (post: PostWithNeighbor) => !allPosts || post.index === allPosts?.length - 1,
     },
   ]
 
+  const [isDirect, setIsDirect] = useState<boolean>(false)
+  useEffect(() => {
+    if (!router.isReady) {
+      return
+    }
+    setIsDirect(router.query.direct || '' ? true : false)
+  }, [router])
+
   return (
     <>
-      <div className='mx-auto max-w-main'>
+      <div className=''>
         <HeroPost />
 
         {/* 投稿 */}
         <div className='relative pb-[24px] md:pb-[32px]'>
           <div className='rounded-b-common bg-mywhite pb-common drop-shadow-[0_4px_4px_rgba(0,0,0,0.05)] md:drop-shadow-[0_13px_13px_rgba(0,0,0,0.05)]'>
-            <div className='mx-auto flex max-w-screen-md flex-col items-center rounded-b-common px-4 lg:px-0'>
+            <div className='mx-auto mb-[48px] flex max-w-screen-md flex-col items-center rounded-b-common px-4 lg:px-0'>
               {/* 見出しエリア */}
               <p className='text-myyellow'>{post.recipientGroupName}</p>
               <h1 className='text-h my-[16px] break-words px-[24px] text-center lg:whitespace-nowrap'>
@@ -72,19 +79,13 @@ const PostPage = ({ initialPost, allPosts }: Props) => {
               {/* 本文エリア */}
               <p className='w-full py-8 text-left lg:py-16'>{post.body}</p>
               {/* 画像エリア */}
-              <div className='max-h-[370px] min-h-[224px] min-w-[224px] max-w-[370px] pb-[48px]'>
-                <Image
-                  src={post.images[0]}
-                  width={370}
-                  height={370}
-                  alt=''
-                  className='object-cover'
-                />
+              <div className='relative flex min-h-[320px] w-full min-w-[320px] justify-center md:min-h-[480px] md:min-w-[480px]'>
+                <Image src={post.images[0]} fill alt='' className='object-contain' />
               </div>
             </div>
           </div>
           <div className='absolute bottom-0 flex w-full justify-center'>
-            <LinkButtonWhite label='一覧へもどる' onClick={() => router.back()} />
+            {!isDirect && <LinkButtonWhite label='一覧へもどる' onClick={() => router.back()} />}
           </div>
         </div>
 
@@ -94,14 +95,15 @@ const PostPage = ({ initialPost, allPosts }: Props) => {
             <div
               key={idx}
               className={classNames(
-                'flex flex-col items-center gap-[10px] opacity-30 md:flex-row md:gap-[20px]',
-                !move.disabled(post) && 'cursor-pointer hover:opacity-100',
+                'flex flex-col items-center gap-[10px] opacity-100 md:gap-[20px] md:opacity-30',
+                move.disabled(post) ? 'invisible' : 'cursor-pointer hover:opacity-100',
+                idx === 0 ? 'md:flex-row' : 'md:flex-row-reverse',
               )}
               onClick={() => {
                 if (move.disabled(post)) {
                   return
                 }
-                move.onClick(post)
+                move.onClick(post, isDirect)
               }}
             >
               <div className='flex h-[60px] w-[60px] items-center justify-center rounded-full border-[3px] border-mybrown'>

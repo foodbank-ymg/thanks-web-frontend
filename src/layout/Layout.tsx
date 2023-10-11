@@ -35,9 +35,9 @@ const Layout = ({ children }: Props) => (
         site_name: title,
       }}
     />
-    <div className='mx-auto max-w-main'>
+    <div className=''>
       {/* 固定ヘッダー */}
-      <div className='static z-50 w-full max-w-main md:fixed'>
+      <div className='static z-50 w-full md:fixed'>
         <Header />
       </div>
       {children}

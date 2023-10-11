@@ -18,3 +18,4 @@ jobs:
           url: '${{ secrets.BACKEND_HOOK_URL_PROD }}'
           method: 'POST'
           customHeaders: '{"Authorization": "Bearer ${{ secrets.BACKEND_HOOK_TOKEN_PROD }}"}'
+          timeout: 10000
