@@ -4,10 +4,12 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className='m-[16px] flex h-auto flex-col gap-8 whitespace-nowrap rounded-[5vw] bg-mybrown p-[32px] text-mywhite md:relative md:m-[32px] md:h-[280px] md:flex-row'>
+    <div className='rounded-footer m-[16px] flex h-auto flex-col gap-8 whitespace-nowrap bg-mybrown p-[32px] text-mywhite md:relative md:m-[32px] md:h-[280px] md:flex-row'>
       {/* ロゴ */}
       <div className='static left-[5vw] top-[40px] w-[280px] text-center md:absolute lg:w-[480px] lg:text-left'>
-        <Image src='/img/logo_normal.svg' width='480' height='0' alt='ありがとうWebsiteロゴ' />
+        <Link href='/'>
+          <Image src='/img/logo_normal.svg' width='480' height='0' alt='ありがとうWebsiteロゴ' />
+        </Link>
       </div>
       {/* サイト内リンク */}
       <div className='flex flex-col gap-y-4 md:absolute md:bottom-[50%] md:right-[5vw] md:translate-y-[50%] lg:ml-auto'>

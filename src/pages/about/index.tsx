@@ -5,8 +5,6 @@ import React from 'react'
 import AboutDescription from '@/components/AboutDescription'
 import AboutGroups from '@/components/AboutGroups'
 import AboutIntroduction from '@/components/AboutIntroduction'
-import Footer from '@/components/Footer'
-import Header from '@/components/Header'
 import HeroRect from '@/components/HeroRect'
 
 const AboutPage = () => {

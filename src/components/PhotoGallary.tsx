@@ -14,17 +14,16 @@ const PhotoGallary = ({ posts, minSize }: Props) => {
     <div
       // 画像サイズx9に、gapのサイズx8を足す
       className={classNames(
-        'w-[110vw] max-w-[1382px] bg-mywhite',
+        'w-[110vw] bg-mywhite',
         minSize === 'small' ? 'min-w-[691px]' : 'min-w-[914px]',
       )}
     >
-      {/* <div className='grid grid-cols-9 gap-0.5 py-1 md:gap-1'> */}
       <div className='grid grid-cols-9 gap-[2px] md:gap-[4px]'>
         {posts.slice(0, Math.min(18, posts.length)).map((post) => (
           <div
             key={post.id}
             className={classNames(
-              'h-[12vw] max-h-[150px] w-[12vw] max-w-[150px]',
+              'h-[12vw] w-[12vw]',
               minSize === 'small' ? 'min-h-[75px] min-w-[75px]' : 'min-h-[100px] min-w-[100px]',
             )}
           >

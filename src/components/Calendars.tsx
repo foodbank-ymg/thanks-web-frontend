@@ -12,7 +12,7 @@ const Calendars = ({ yearMonthsList }: Props) => {
   return (
     <>
       {/* 花のアイコンたち */}
-      <div className='relative h-[100px] overflow-hidden'>
+      <div className='relative h-[15vw] overflow-hidden'>
         <div className='absolute right-[25vw] bottom-[-1vw] z-10 w-[5vw] max-w-[80px] rotate-[-5deg]'>
           <Image src='/img/flower_l.svg' width={289} height={372} alt='' className=' ' />
         </div>

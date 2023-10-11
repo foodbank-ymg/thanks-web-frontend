@@ -18,7 +18,7 @@ module.exports = {
       },
       borderRadius: {
         common: '5vw',
-        cardoutl: '2.5vw',
+        cardoutl: '2.25vw',
         cardouts: '5vw',
         cardinl: '1.5vw',
         cardins: '3vw',

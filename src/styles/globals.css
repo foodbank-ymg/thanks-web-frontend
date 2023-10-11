@@ -54,3 +54,11 @@
 .pb-2h {
   padding-bottom: clamp(40px, 5vw, 64px);
 }
+
+.pcard {
+  padding: clamp(12px, 1.25vw, 16px);
+}
+
+.rounded-footer {
+  border-radius: clamp(18px, 5vw, 64px);
+}

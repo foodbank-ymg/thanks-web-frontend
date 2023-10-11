@@ -21,12 +21,12 @@ const Postcard = ({ posts, index, isMobileHorizontal }: Props) => {
         !isMobileHorizontal && 'sm:w-[28vw] sm:max-w-[360px] sm:px-0',
       )}
     >
-      <div className={classNames('relative mx-auto max-w-[360px] sm:aspect-[360/550]')}>
-        <div className='relative z-10 h-full w-full gap-[16px] rounded-cardouts bg-white max-sm:p-[.75em] sm:rounded-cardoutl'>
+      <div className={classNames('relative mx-auto sm:aspect-[360/550] sm:max-w-[360px]')}>
+        <div className='relative z-10 h-full w-full gap-[16px] rounded-cardouts bg-white sm:rounded-cardoutl'>
           <Link href={`/post/${post.id}`}>
             <div
               className={classNames(
-                'flex h-full w-full sm:flex-col sm:p-[1.25vw]',
+                'pcard flex h-full w-full sm:flex-col',
                 isMobileHorizontal ? 'flex-row' : 'flex-col',
               )}
             >

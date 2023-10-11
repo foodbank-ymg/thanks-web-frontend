@@ -88,8 +88,9 @@ const PostPage = ({ initialPost, allPosts }: Props) => {
             <div
               key={idx}
               className={classNames(
-                'flex flex-col items-center gap-[10px] opacity-30 md:flex-row md:gap-[20px]',
+                'flex flex-col items-center gap-[10px] opacity-100 md:gap-[20px] md:opacity-30',
                 !move.disabled(post) && 'cursor-pointer hover:opacity-100',
+                idx === 0 ? 'md:flex-row' : 'md:flex-row-reverse',
               )}
               onClick={() => {
                 if (move.disabled(post)) {

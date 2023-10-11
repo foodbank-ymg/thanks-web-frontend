@@ -24,7 +24,7 @@ const HomePage = ({ posts }: Props) => {
       {/* ヒーローセクション */}
       <HeroLetter />
       {/* ヒーローセクションにつづく形のメッセージ */}
-      <div className='text-h flex flex-col gap-y-[24px] rounded-b-common bg-mywhite pb-[60px] text-center md:gap-0'>
+      <div className='text-h rounded-b-common flex flex-col gap-y-[24px] bg-mywhite pb-[60px] text-center md:gap-0'>
         <div className='flex flex-col justify-center md:flex-row'>
           <p>あなたあての</p>
           <p>&quot;ありがとう&quot;が届きました。</p>
@@ -93,7 +93,7 @@ const HomePage = ({ posts }: Props) => {
           {/* 白地とボタンを含むエリア */}
           <div className='relative pb-[24px] md:pb-[32px]'>
             {/* 白地のエリア */}
-            <div className='ml-[8%] overflow-hidden rounded-l-common border-[2px] border-mywhite bg-mywhite bg-smile  bg-[length:15vw_15vw] bg-[right_1rem_bottom_1rem] bg-no-repeat md:border-[4px]'>
+            <div className='rounded-l-common ml-[8%] overflow-hidden border-[2px] border-mywhite bg-mywhite bg-smile  bg-[length:15vw_15vw] bg-[right_1rem_bottom_1rem] bg-no-repeat md:border-[4px]'>
               <div className='translate-x-[-5vw]'>
                 <PhotoGallary posts={posts} minSize='medium' />
               </div>
@@ -131,7 +131,7 @@ const HomePage = ({ posts }: Props) => {
 
       {/* このサイトについてイントロ */}
       <div className='relative pb-[24px] md:pb-[32px]'>
-        <div className='overflow-hidden rounded-b-common bg-myyellow text-center md:pb-[50px]'>
+        <div className='rounded-b-common overflow-hidden bg-myyellow text-center md:pb-[50px]'>
           <div className='relative mx-auto w-fit pt-[5vw]'>
             <h2 className='text-hb relative z-20 px-[16px] align-text-bottom'>
               このサイトについて
