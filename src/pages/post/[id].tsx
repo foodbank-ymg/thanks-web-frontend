@@ -64,7 +64,7 @@ const PostPage = ({ initialPost, allPosts }: Props) => {
   return (
     <>
       <div className=''>
-        <HeroPost />
+        <HeroPost bgUrl={post.images[0]} />
 
         {/* 投稿 */}
         <div className='relative pb-[24px] md:pb-[32px]'>

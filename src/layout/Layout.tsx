@@ -37,7 +37,7 @@ const Layout = ({ children }: Props) => (
     />
     <div className=''>
       {/* 固定ヘッダー */}
-      <div className='static z-50 w-full md:fixed'>
+      <div className='static z-50 w-full lg:fixed'>
         <Header />
       </div>
       {children}

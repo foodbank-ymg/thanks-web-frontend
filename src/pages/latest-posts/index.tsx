@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import Calendars from '@/components/Calendars'
 import HeroRect from '@/components/HeroRect'
@@ -19,7 +19,7 @@ type Props = {
 const LatestPostsPage = ({ posts, yearMonthsList }: Props) => {
   return (
     <>
-      <HeroRect bgUrl="bg-[url('/img/hero-post-bg.jpg')]">
+      <HeroRect bgUrl={posts[0].images[0]}>
         <div className='text-center'>
           <h1 className='text-hb mb-[16px]'>最近のおたより</h1>
           <div className='flex flex-col justify-center md:flex-row'>

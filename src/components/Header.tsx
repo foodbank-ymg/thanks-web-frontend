@@ -21,14 +21,14 @@ const Header = () => {
   return (
     <div>
       <div className='flex flex-row items-center justify-between'>
-        <div className='flex h-[48px] w-full items-center justify-center bg-myyellow md:h-[100px] md:w-[400px] md:rounded-br-[36px]'>
+        <div className='flex h-[48px] w-full items-center justify-center bg-myyellow lg:h-[100px] lg:w-[400px] lg:rounded-br-[36px]'>
           <Link href='/'>
             <Image
               src='/img/logo_alt.svg'
               width={400}
               height={100}
               alt=''
-              className='h-[30px] md:h-[60px]'
+              className='h-[30px] lg:h-[60px]'
             />
           </Link>
         </div>
