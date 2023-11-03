@@ -3,6 +3,7 @@ import Image from 'next/image'
 import React from 'react'
 
 import AboutDescription from '@/components/AboutDescription'
+import AboutRightDisclaimer from '@/components/AboutDisclaimer'
 import AboutGroups from '@/components/AboutGroups'
 import AboutIntroduction from '@/components/AboutIntroduction'
 import HeroRect from '@/components/HeroRect'
@@ -24,6 +25,7 @@ const AboutPage = () => {
       </div>
       <AboutGroups />
       <AboutDescription />
+      <AboutRightDisclaimer />
     </>
   )
 }
