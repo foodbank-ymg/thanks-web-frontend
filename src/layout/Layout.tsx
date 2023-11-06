@@ -26,7 +26,7 @@ const Layout = ({ children }: Props) => (
         description: description,
         images: [
           {
-            url: `${url}ogp.jpg`,
+            url: `${url}ogp.png`,
             width: 1200,
             height: 630,
             alt: '',
@@ -37,7 +37,7 @@ const Layout = ({ children }: Props) => (
     />
     <div className=''>
       {/* 固定ヘッダー */}
-      <div className='static z-50 w-full md:fixed'>
+      <div className='static z-50 w-full lg:fixed'>
         <Header />
       </div>
       {children}
