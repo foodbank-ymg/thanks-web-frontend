@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import Calendars from '@/components/Calendars'
 import HeroRect from '@/components/HeroRect'
@@ -9,7 +9,7 @@ import { biuldYearMonthsList } from '@/lib/posts'
 import { Post } from '@/types/Post'
 import { YearMonths } from '@/types/YearMonths'
 
-const LATEST_POSTS_QUANTITY = 30
+const LATEST_POSTS_QUANTITY = 24
 
 type Props = {
   posts: Post[]
@@ -19,7 +19,7 @@ type Props = {
 const LatestPostsPage = ({ posts, yearMonthsList }: Props) => {
   return (
     <>
-      <HeroRect bgUrl="bg-[url('/img/hero-post-bg.jpg')]">
+      <HeroRect bgUrl={posts[0].images[0]}>
         <div className='text-center'>
           <h1 className='text-hb mb-[16px]'>最近のおたより</h1>
           <div className='flex flex-col justify-center md:flex-row'>
@@ -29,7 +29,7 @@ const LatestPostsPage = ({ posts, yearMonthsList }: Props) => {
         </div>
       </HeroRect>
       <div className='pt-2h text-center'>
-        <h1 className='text-hb'>最近のおたより {LATEST_POSTS_QUANTITY}件</h1>
+        <h1 className='text-hb'>最近のおたより</h1>
       </div>
       <div className='pt-h'>
         <PostList posts={posts} />

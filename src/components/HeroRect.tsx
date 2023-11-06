@@ -9,7 +9,14 @@ type Props = {
 
 const HeroRect = ({ bgUrl, children }: Props) => {
   return (
-    <div className={classNames('bg-cover bg-center', bgUrl)}>
+    <div
+      style={{
+        backgroundImage: `url(${bgUrl})`,
+        backgroundColor: 'rgba(255,255,255,0.4)',
+        backgroundBlendMode: 'lighten',
+      }}
+      className={classNames('bg-cover bg-center')}
+    >
       {/* 固定ヘッダーの高さ */}
       <div className='md:h-[100px]' />
       <div className='pt-2h pb-2h mx-auto w-full max-w-[640px] px-[16px]'>
