@@ -7,8 +7,15 @@ type Props = {
 
 const HeroPost = ({ bgUrl }: Props) => {
   return (
-    <div className='relative h-[40vw] max-h-[540px] min-h-[300px]'>
-      <Image src={bgUrl} fill alt='' className='h-full w-full object-cover' />
+    <div
+      className='relative h-[65vw] max-h-[540px]'
+      style={{
+        backgroundImage: `linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.15) 100%), url(${bgUrl})`,
+        backgroundRepeat: 'no-repeat, repeat no-repeat',
+        backgroundPosition: 'center, center, center',
+        backgroundSize: 'cover, cover, cover',
+      }}
+    >
       <Image
         src='/img/hero-letter-cover.svg'
         width={1280}
