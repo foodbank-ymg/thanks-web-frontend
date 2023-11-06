@@ -26,7 +26,7 @@ const Layout = ({ children }: Props) => (
         description: description,
         images: [
           {
-            url: `${url}ogp.jpg`,
+            url: `${url}ogp.png`,
             width: 1200,
             height: 630,
             alt: '',
