@@ -25,7 +25,7 @@ const PostPage = ({ initialPost, allPosts }: Props) => {
 
   const moves = [
     {
-      label: '次のおたより',
+      label: '前のおたより',
       arrowImage: '/img/arrow_right.svg',
       arrowRotate: 'rotate-180',
       arrowShift: 'mr-1',
@@ -41,7 +41,7 @@ const PostPage = ({ initialPost, allPosts }: Props) => {
       disabled: (post: PostWithNeighbor) => !allPosts || post.index === 0,
     },
     {
-      label: '前のおたより',
+      label: '次のおたより',
       arrowImage: '/img/arrow_right.svg',
       arrowRotate: '',
       arrowShift: 'ml-1',

@@ -9,7 +9,7 @@ import { biuldYearMonthsList } from '@/lib/posts'
 import { Post } from '@/types/Post'
 import { YearMonths } from '@/types/YearMonths'
 
-const LATEST_POSTS_QUANTITY = 30
+const LATEST_POSTS_QUANTITY = 24
 
 type Props = {
   posts: Post[]
@@ -29,7 +29,7 @@ const LatestPostsPage = ({ posts, yearMonthsList }: Props) => {
         </div>
       </HeroRect>
       <div className='pt-2h text-center'>
-        <h1 className='text-hb'>最近のおたより {LATEST_POSTS_QUANTITY}件</h1>
+        <h1 className='text-hb'>最近のおたより</h1>
       </div>
       <div className='pt-h'>
         <PostList posts={posts} />
