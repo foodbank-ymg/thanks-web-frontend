@@ -30,51 +30,39 @@ const GroupsCountents: GroupsCountent[] = [
 const AboutGroups = () => {
   const readerGroupsContent = (cont: GroupsCountent) => {
     return (
-      <div className='bg-myyellowpale'>
-        <div className='justify-center text-left'>
-          <div className='mx-auto md:mx-10'>
-            <div className='flex w-full flex-row justify-center md:flex-col'>
-              <div className='my-[1em] aspect-[1/1] rounded-full bg-mywhite max-md:w-1/2'>
-                <Image
-                  src={cont.image}
-                  width='200'
-                  height='200'
-                  alt='logo'
-                  className='w-full object-cover'
-                />
-              </div>
-              <p className='ml-3 w-1/2 py-6 md:ml-0 md:w-full md:py-0'>{cont.detail}</p>
-            </div>
-          </div>
+      <div className='flex flex-row items-center justify-center gap-[32px] md:flex-col'>
+        <div className='aspect-[1/1] max-w-[180px] rounded-full bg-mywhite p-[12px] drop-shadow-lg md:max-w-[300px] md:p-[24px]'>
+          <Image
+            src={cont.image}
+            width='300'
+            height='300'
+            alt='logo'
+            className='w-full object-cover'
+          />
         </div>
+        <p className='md:ml-0 md:w-full md:py-0'>{cont.detail}</p>
       </div>
     )
   }
 
   return (
-    <div className='mx-auto  w-full rounded-common p-[2em]'>
-      <div className='mx-auto max-w-main'>
-        <div className='flex flex-col items-center justify-center'>
-          <div className='relative w-[4/7] '>
-            <p className='text-h z-10 px-[0.5em] text-center after:absolute after:inset-0 after:z-[-10] after:h-[0.75em] after:translate-y-[1em] after:rounded-full after:bg-myyellow '>
-              関わっている団体
-            </p>
-            <p className='m-6 break-words text-center'>
-              当サイトは、デジタル技術を活用して地域課題の解決等に取り組むコミュニティ
-              <br className='max-md:hidden' />
-              「デジテック for YAMAGUCHI」の共創プロジェクトにより作成されました。
-              <br className='max-md:hidden' />
-              徳山高専の学生が中心となって開発を行いました。
-            </p>
+    <div className='mx-auto max-w-screen-lg py-[2em] px-[32px]'>
+      <div className='relative mx-auto md:w-[65%]'>
+        <p className='text-h z-10 px-[0.5em] text-center after:absolute after:inset-0 after:z-[-10] after:h-[0.75em] after:translate-y-[1em] after:rounded-full after:bg-myyellow '>
+          関わっている団体
+        </p>
+        <p className='my-6 mx-auto max-w-[600px] break-words text-left md:text-center'>
+          当サイトは、デジタル技術を活用して地域課題の解決等に取り組むコミュニティ 「デジテック for
+          YAMAGUCHI」の共創プロジェクトにより作成されました。
+          徳山高専の学生が中心となって開発を行いました。
+        </p>
+      </div>
+      <div className='flex flex-col justify-between gap-[32px] md:flex-row'>
+        {GroupsCountents.map((cont, indx) => (
+          <div key={indx} className='flex-1'>
+            {readerGroupsContent(cont)}
           </div>
-        </div>
-        <div className='flex flex-col md:flex-row'>
-          {GroupsCountents.map((cont, indx) => (
-            <div key={indx} className='md:w-1/3'>
-              {readerGroupsContent(cont)}
-            </div>
-          ))}
-        </div>
+        ))}
       </div>
     </div>
   )
