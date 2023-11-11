@@ -1,67 +1,68 @@
 import Image from 'next/image'
 import React from 'react'
 
+import img1 from '/public/img/group-tokuyama-kosen.png'
+import img2 from '/public/img/group-fbyamaguchi.png'
+import img3 from '/public/img/group-digitech-for-yamaguchi.png'
+
+type GroupsCountent = {
+  image: string
+  detail: string
+}
+const GroupsCountents: GroupsCountent[] = [
+  {
+    image: '/img/group-tokuyama-kosen.png',
+    detail:
+      '情報電子工学科の学生有志3名が、LINEの機能を活用した記事投稿システムおよびWebサイト開発に挑戦。',
+  },
+  {
+    image: '/img/group-fbyamaguchi.png',
+    detail:
+      '食品を受け取った方の感謝の思いや日々の活動の情報などをより多くの方に発信し、さらなる支援を創出',
+  },
+  {
+    image: '/img/group-digitech-for-yamaguchi.png',
+    detail:
+      '徳山高専の学生やフードバンク山口など「デジテック for YAMAGUCHI」の会員同士による地域課題等の解決に挑戦する活動を促進',
+  },
+]
+
 const AboutGroups = () => {
-  return (
-    <div className='my-10 h-auto  bg-myyellowpale text-center'>
-      <div className='flex flex-col items-center justify-center'>
-        <div className='relative w-3/5 '>
-          <p className='text-h z-10 px-[0.5em] after:absolute after:inset-0 after:z-[-10] after:h-[0.75em] after:translate-y-[1em] after:rounded-full after:bg-myyellow'>
-            関わっている団体
-          </p>
-          <p className='mb-6 break-words'>
-            当サイトは、デジタル技術を活用して地域課題の解決等に取り組むコミュニティ「デジテック for
-            YAMAGUCHI」の共創プロジェクト二より作成されました。徳山高専の学生が中心となって開発を行いました。
-          </p>
+  const readerGroupsContent = (cont: GroupsCountent) => {
+    return (
+      <div className='flex flex-row items-center justify-center gap-[32px] md:flex-col'>
+        <div className='aspect-[1/1] max-w-[180px] rounded-full bg-mywhite p-[12px] drop-shadow-lg md:max-w-[300px] md:p-[24px]'>
+          <Image
+            src={cont.image}
+            width='300'
+            height='300'
+            alt='logo'
+            className='w-full object-cover'
+          />
         </div>
+        <p className='md:ml-0 md:w-full md:py-0'>{cont.detail}</p>
       </div>
+    )
+  }
 
-      <div className='flex flex-col justify-center text-left lg:flex-row'>
-        <div className='mx-10  lg:w-1/3'>
-          <div className='flex  flex-row justify-center lg:flex-col'>
-            <Image
-              src='/img/hero-fb-mark.svg'
-              width='100'
-              height='100'
-              alt='logo'
-              className='w-1/2 lg:w-full'
-            />
-            <p className='ml-5 w-full pt-8  lg:ml-0 lg:pt-0'>
-              情報電子工学科の学生有志3名が、LINEの機能を活用した記事投稿システムおよびWebサイト開発に挑戦。
-            </p>
+  return (
+    <div className='mx-auto max-w-screen-lg py-[2em] px-[32px]'>
+      <div className='relative mx-auto md:w-[65%]'>
+        <p className='text-h z-10 px-[0.5em] text-center after:absolute after:inset-0 after:z-[-10] after:h-[0.75em] after:translate-y-[1em] after:rounded-full after:bg-myyellow '>
+          関わっている団体
+        </p>
+        <p className='my-6 mx-auto max-w-[600px] break-words text-left md:text-center'>
+          当サイトは、デジタル技術を活用して地域課題の解決等に取り組むコミュニティ 「デジテック for
+          YAMAGUCHI」の共創プロジェクトにより作成されました。
+          徳山高専の学生が中心となって開発を行いました。
+        </p>
+      </div>
+      <div className='flex flex-col justify-between gap-[32px] md:flex-row'>
+        {GroupsCountents.map((cont, indx) => (
+          <div key={indx} className='flex-1'>
+            {readerGroupsContent(cont)}
           </div>
-        </div>
-
-        <div className='mx-10  lg:w-1/3'>
-          <div className='flex flex-row justify-center lg:flex-col'>
-            <Image
-              src='/img/hero-fb-mark.svg'
-              width='100'
-              height='100'
-              alt='logo'
-              className='w-1/2 lg:w-full'
-            />
-            <p className='ml-5 w-full pt-8  lg:ml-0 lg:pt-0'>
-              食品を受け取った方の感謝の思いや日々の活動の情報などをより多くの方に発信し、更なる支援を創出。
-            </p>
-          </div>
-        </div>
-
-        <div className='mx-10  lg:w-1/3 '>
-          <div className='flex flex-row justify-center lg:flex-col'>
-            <Image
-              src='/img/hero-fb-mark.svg'
-              width='100'
-              height='100'
-              alt='logo'
-              className='w-1/2 lg:w-full'
-            />
-            <p className='ml-5 w-full pt-8  lg:ml-0 lg:pt-0'>
-              徳山高専の学生やフードバンク山口など「デジテック for
-              YAMAGUCHI」の会員同士による地域課題等の解決に挑戦する活動を促進。
-            </p>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   )

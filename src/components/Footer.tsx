@@ -28,11 +28,11 @@ const Footer = () => {
       </div>
       {/* 連絡先 */}
       <div className='static left-[5vw] bottom-[40px] text-center md:absolute md:text-left'>
-        <p className='text-[18px]'>特定非営利法人&nbsp;フードバンク山口</p>
+        <p className='text-[18px]'>特定非営利活動法人&nbsp;フードバンク山口</p>
         <div className='pt-4'>
           <p>山口市黒川1159-13</p>
           <div className='flex flex-col justify-start md:flex-row'>
-            <p>TEL: 080-3365-9640(事務局)&emsp;</p>
+            <p>TEL: 080-3565-9640(事務局)&emsp;</p>
             <p>FAX: 083-963-4157</p>
           </div>
         </div>
