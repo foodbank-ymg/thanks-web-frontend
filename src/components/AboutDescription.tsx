@@ -9,57 +9,32 @@ type DescContent = {
   description: string
 }
 
-const descContents: DescContent[] = [
-  {
-    image: '/img/hero-rect-bg.jpg',
-    title:
-      'あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。',
-    description:
-      'あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。',
-  },
-  {
-    image: '/img/hero-rect-bg.jpg',
-    title:
-      'あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。',
-    description:
-      'あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。',
-  },
-]
-
 const AboutDescription = () => {
-  const renderDescContent = (cont: DescContent, orderIndx: number) => {
-    return (
-      <div
-        className={classNames(
-          'flex w-full pb-[5em] max-md:flex-col',
-          orderIndx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse',
-        )}
-      >
-        <div className='max-md:w-full md:w-1/2'>
-          <Image
-            src={cont.image}
-            width={1280}
-            height={1280}
-            alt=''
-            className='aspect-[1/1] object-cover'
-          />
-        </div>
-        <div className='h-auto max-md:w-full md:w-1/2'>
-          <div className='text-left'>
-            <h2>{cont.title}</h2>
-            <p>{cont.description}</p>
-          </div>
-        </div>
-      </div>
-    )
-  }
-
   return (
     <div className='bg-myyellowpale p-[2.5em]'>
       <div className='rounded-common bg-white p-[2.5em]'>
-        {descContents.map((cont, indx) => (
-          <div key={indx}>{renderDescContent(cont, indx)}</div>
-        ))}
+        <div className='flex flex-col lg:flex-row'>
+          <div className='w-auto px-[3vw] lg:w-1/2'>
+            <div className='w-5/6'>
+              <p className='text-h'>
+                ‘‘ありがとう’’をみんなに届けるこのサービスのココロをさらにみんなに届けたい。
+              </p>
+            </div>
+            <p className='mt-10'>
+              当サイトでは、食品を寄贈いただいた方に、食品を受け取られた方からの感謝の気持ちを届けます。
+            </p>
+            <p>
+              そして、フードバンク山口の活動を多くの方に知っていただき、賛同いただきながら、食を通じた食品ロス削減を進めます。当サイトのプログラムをはじめ、開発の情報を全て公開しています。
+            </p>
+            <button className='text-btn mt-10 h-auto w-full rounded-full bg-mybrown py-2 text-mywhite'>
+              Githubで情報を見る
+            </button>
+          </div>
+
+          <div className='mt-10 w-auto px-[3vw] lg:mt-0 lg:w-1/2'>
+            <Image src='' width='100' height='100' alt='' className='' />
+          </div>
+        </div>
       </div>
     </div>
   )
