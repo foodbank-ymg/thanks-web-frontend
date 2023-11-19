@@ -1,22 +1,34 @@
 # thanks-web-frontend
 
-SSG website generated with Next.js and TailwindCSS.
+フードバンクありがとう Website のフロントエンドです。
 
-## Getting Started
+<https://thankyou.fbyamaguchi.org/>
 
-```bash
+## ローカル環境
+
+[Nodejs](https://nodejs.org/)と [yarn](https://yarnpkg.com/) をインストールしてください。
+
+依存パッケージをインストールした後、ローカル実行します。
+
+```shell
 yarn
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<http://localhost:3000> で確認できます。おたよりはダミーデータです。
 
-## Deploy
+## Web サービス環境
 
-Automatically deployed with Github Actions by branch operation.
+インターネット上で Web サービスとして稼働させるには、[Firebase](https://firebase.google.com/) を使います。
 
-merge `develop` branch
-<https://thanks-web-dev.web.app/>
+2 つの Firebase 環境（開発用/本番用）を前提とした GitHub Actions の自動リリースを組んでいます。
 
-merge `main` branch
-<https://thanks-web-prod.web.app/>
+- `develop`ブランチにマージすると、開発環境に自動リリース
+- `main`ブランチにマージすると、本番環境に自動リリース
+
+Firebase が準備できたら、GitHub Actions にシークレット変数を登録してください。
+
+> [!IMPORTANT]
+> Web サービスの稼働には、バックエンドの構築も必要です。こちらを参照してください。
+
+<https://github.com/foodbank-ymg/thanks-web-backend/>
