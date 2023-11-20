@@ -1,6 +1,8 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
+import LinkButtonBrown from '@/components/LinkButtonBrown'
 import { classNames } from '@/lib/classNames'
 
 type DescContent = {
@@ -9,57 +11,39 @@ type DescContent = {
   description: string
 }
 
-const descContents: DescContent[] = [
-  {
-    image: '/img/hero-rect-bg.jpg',
-    title:
-      'あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。',
-    description:
-      'あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。',
-  },
-  {
-    image: '/img/hero-rect-bg.jpg',
-    title:
-      'あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。',
-    description:
-      'あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。あいうえおかきくけこ。',
-  },
-]
-
 const AboutDescription = () => {
-  const renderDescContent = (cont: DescContent, orderIndx: number) => {
-    return (
-      <div
-        className={classNames(
-          'flex w-full pb-[5em] max-md:flex-col',
-          orderIndx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse',
-        )}
-      >
-        <div className='max-md:w-full md:w-1/2'>
-          <Image
-            src={cont.image}
-            width={1280}
-            height={1280}
-            alt=''
-            className='aspect-[1/1] object-cover'
-          />
-        </div>
-        <div className='h-auto max-md:w-full md:w-1/2'>
-          <div className='text-left'>
-            <h2>{cont.title}</h2>
-            <p>{cont.description}</p>
+  return (
+    <div className='mx-[5vw]'>
+      <div className='rounded-limit mx-auto box-content flex max-w-screen-lg flex-col gap-[32px] bg-white p-[5vw] lg:flex-row lg:gap-[48px]'>
+        <div className='flex-1'>
+          <p className='text-h text-center lg:text-left'>
+            ‘‘ありがとう’’をみんなに届ける
+            <br />
+            このサービスのココロを
+            <br />
+            さらにみんなに届けたい。
+          </p>
+          <p className='mt-[20px] lg:mt-[32px]'>
+            当サイトのWebシステムは、プログラムをはじめ開発の情報を全て公開しています。
+            <br />
+            食品に限らずモノやコトの享受や活動に際して、‘‘ありがとう‘‘の気持ちを集めて届けたいケースがございましたら、是非ご活用ください。(システムの構築と運用は、技術者のサポートと実費が必要です)
+          </p>
+          <div className='mx-auto mt-[20px] flex justify-center lg:mt-[32px]'>
+            <LinkButtonBrown
+              label='Githubで情報を見る'
+              onClick={() => {
+                window.open(
+                  'https://github.com/foodbank-ymg/thanks-web-frontend',
+                  '_blank',
+                  'noreferrer',
+                )
+              }}
+            />
           </div>
         </div>
-      </div>
-    )
-  }
-
-  return (
-    <div className='bg-myyellowpale p-[2.5em]'>
-      <div className='rounded-common bg-white p-[2.5em]'>
-        {descContents.map((cont, indx) => (
-          <div key={indx}>{renderDescContent(cont, indx)}</div>
-        ))}
+        <div className='mx-auto max-w-[470px]'>
+          <Image src='/img/about-oss-image.jpg' width='470' height='400' alt='' className='' />
+        </div>
       </div>
     </div>
   )

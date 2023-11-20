@@ -35,7 +35,7 @@ const Header = () => {
         {/* 横幅が狭い時は出せない、別の表現になる */}
         <div className='mr-[32px] hidden h-[64px] items-center gap-x-[12px] rounded-full bg-myyellow px-[32px] text-[20px] text-mywhite lg:flex'>
           {links.map((link) => (
-            <Link href={link.path} key={link.label}>
+            <Link href={link.path} key={link.label} className='hover:text-mybrown'>
               {link.label}
             </Link>
           ))}
