@@ -1,11 +1,11 @@
 # thanks-web-frontend
 
-フードバンクありがとう Website のフロントエンドです。
+フードバンクありがとう Website のフロントエンドです。Web サイトを管理しています。
 
 <https://thankyou.fbyamaguchi.org/>
 
 > [!IMPORTANT]
-> おたよりの投稿とデータ管理はバックエンドで行なっています。
+> おたよりの投稿フローとデータはバックエンド側で管理しています。
 > 実際にサービスとして提供するには、バックエンドを含めた Web 環境の構築が必要です。
 
 <https://github.com/foodbank-ymg/thanks-web-backend/>
