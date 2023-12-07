@@ -41,8 +41,9 @@ const AboutDescription = () => {
             />
           </div>
         </div>
-        <div className='mx-auto max-w-[470px]'>
-          <Image src='/img/about-oss-image.jpg' width='470' height='400' alt='' className='' />
+        <div className='mx-auto max-w-[480px]'>
+          <Image src='/img/about-oss-image.jpg' width='480' height='360' alt='' />
+          <p className='py-1 text-center'>初期開発メンバーがリリース時に説明した様子 2023/12/1</p>
         </div>
       </div>
     </div>
