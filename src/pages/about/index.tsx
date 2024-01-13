@@ -5,6 +5,7 @@ import AboutDescription from '@/components/AboutDescription'
 import AboutRightDisclaimer from '@/components/AboutDisclaimer'
 import AboutGroups from '@/components/AboutGroups'
 import AboutIntroduction from '@/components/AboutIntroduction'
+import Donation from '@/components/Donation'
 import HeroRect from '@/components/HeroRect'
 
 const AboutPage = () => {
@@ -25,6 +26,7 @@ const AboutPage = () => {
       <AboutGroups />
       <AboutDescription />
       <AboutRightDisclaimer />
+      <Donation />
     </>
   )
 }
