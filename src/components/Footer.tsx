@@ -25,6 +25,9 @@ const Footer = () => {
         <Link href='https://fbyamaguchi.org/'>
           <span className='mr-2'>▶</span>フードバンク山口公式サイト
         </Link>
+        <Link href='https://congrant.com/project/foodbank-ymg/8052'>
+          <span className='mr-2'>▶️</span>フードバンク山口寄付サイト
+        </Link>
       </div>
       {/* 連絡先 */}
       <div className='static left-[5vw] bottom-[40px] text-center md:absolute md:text-left'>
