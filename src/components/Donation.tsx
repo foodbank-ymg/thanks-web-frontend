@@ -19,15 +19,21 @@ const Donation = () => {
               {/*元々max-w-[600px] */}
               <div className='my-[32px] mx-auto grid max-w-[700px] grid-flow-row gap-[1em]'>
                 {/* イメージと文章の2段組み */}
-                <div className='flex flex-col items-center gap-[5%] md:flex-row'>
+                <div className='flex flex-col items-center md:flex-row'>
                   {/* 左島 */}
-                  <div className='md:w-[60%]'>
+                  <div className='flex flex-auto text-left'>
                     <p>
-                      NPO法人フードバンク山口は、個人や企業などからこれまで約206トンの食品を受入れ、必要な方にお届けしてきました。（2017年〜2023年3月末時点）食品ロス削減と経済的な不安を抱える方々への食支援に、フードバンクの担う役割は日増しに大きくなってきています。206トンもの食品を責任もって循環させるためには、スタッフを雇用したり、保管場所の維持管理にも費用がかかります。「もったいないをありがとうへ」のサイクルを回し続けるために、運営資金のご寄付をお願いいいたします。
+                      NPO法人フードバンク山口は、個人や企業などからこれまで約206トンの食品を受入れ、必要な方にお届けしてきました。（2017年〜2023年3月末時点）
+                      <br />
+                      食品ロス削減と経済的な不安を抱える方々への食支援に、フードバンクの担う役割は日増しに大きくなってきています。{' '}
+                      <br />
+                      206トンもの食品を責任もって循環させるためには、スタッフを雇用したり、保管場所の維持管理にも費用がかかります。
+                      <br />
+                      「もったいないをありがとうへ」のサイクルを回し続けるために、運営資金のご寄付をお願いいいたします。
                     </p>
                   </div>
                   {/* 右島　*/}
-                  <div className='my-4 text-left md:w-[40%]'>
+                  <div className='my-4 w-[300px] text-left '>
                     <iframe
                       src='https://congrant.com/project_iframe/foodbank-ymg/8052'
                       width='300'
