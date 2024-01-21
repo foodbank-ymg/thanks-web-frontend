@@ -4,6 +4,7 @@ import React from 'react'
 
 import LinkButtonBrown from '@/components/LinkButtonBrown'
 import { classNames } from '@/lib/classNames'
+import { EventClickGithub, event } from '@/lib/gtag'
 
 type DescContent = {
   image: string
@@ -32,6 +33,7 @@ const AboutDescription = () => {
             <LinkButtonBrown
               label='Githubで情報を見る'
               onClick={() => {
+                event(EventClickGithub)
                 window.open(
                   'https://github.com/foodbank-ymg/thanks-web-frontend',
                   '_blank',

@@ -2,6 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
+import { EventClickCongrant, EventClickOfficial, event } from '@/lib/gtag'
+
 const Footer = () => {
   return (
     <div className='rounded-limit m-[16px] flex h-auto flex-col gap-8 whitespace-nowrap bg-mybrown p-[32px] text-mywhite md:relative md:m-[32px] md:h-[280px] md:flex-row'>
@@ -22,8 +24,19 @@ const Footer = () => {
         <Link href='/about'>
           <span className='mr-2'>▶</span>ありがとうWebsiteについて
         </Link>
-        <Link href='https://fbyamaguchi.org/'>
+        <Link
+          href='https://fbyamaguchi.org/'
+          target='_blank'
+          onClick={() => event(EventClickOfficial)}
+        >
           <span className='mr-2'>▶</span>フードバンク山口公式サイト
+        </Link>
+        <Link
+          href='https://congrant.com/project/foodbank-ymg/8052'
+          target='_blank'
+          onClick={() => event(EventClickCongrant)}
+        >
+          <span className='mr-2'>▶️</span>フードバンク山口寄付サイト
         </Link>
       </div>
       {/* 連絡先 */}

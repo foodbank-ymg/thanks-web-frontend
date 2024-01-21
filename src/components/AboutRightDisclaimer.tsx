@@ -3,6 +3,7 @@ import { defaultMaxListeners } from 'events'
 import Image from 'next/image'
 import React from 'react'
 
+import AboutHeadline from '@/components/AboutHeadline'
 import { classNames } from '@/lib/classNames'
 import img from 'public/img/hanaicon20.png'
 
@@ -41,13 +42,7 @@ const AboutRightDisclaimer = () => {
     return (
       <div className='pt-h pb-h'>
         <div className='mx-auto px-[0.5em]'>
-          <div className='text-h w-full justify-center text-center'>
-            <div className='relative mx-auto max-w-[960px] max-md:max-w-[200px] md:w-[65%]'>
-              <p className='z-10 px-[0.5em] after:absolute after:inset-0 after:z-[-10] after:h-[0.75em] after:translate-y-[1em] after:justify-items-stretch after:rounded-full after:bg-myyellow md:min-w-[480px]'>
-                {cont.title}
-              </p>
-            </div>
-          </div>
+          <AboutHeadline title={cont.title} />
           <div className='my-[32px] mx-auto grid max-w-[600px] grid-flow-row gap-[1em]'>
             {cont.details.map((detail, idx) => (
               <div key={idx} className='relative flex-row'>
@@ -68,7 +63,7 @@ const AboutRightDisclaimer = () => {
   }
 
   return (
-    <div className='w-full rounded-common p-[2em]'>
+    <div className='my-[2em] rounded-common px-[2em]'>
       {RightCountents.map((cont, indx) => (
         <div key={indx}>{renderRightContent(cont)}</div>
       ))}

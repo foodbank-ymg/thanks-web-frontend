@@ -25,6 +25,7 @@ jobs:
       - name: build
         env:
           NEXT_PUBLIC_APP_ENV: 'PRODUCTION'
+          NEXT_PUBLIC_GA_MEASUREMENT_ID: ${{ secrets.NEXT_PUBLIC_GA_MEASUREMENT_ID_PROD }}
           IMAGE_BASE_URL: ${{ secrets.IMAGE_BASE_URL_PROD }}
         run: yarn build
       - uses: FirebaseExtended/action-hosting-deploy@v0
