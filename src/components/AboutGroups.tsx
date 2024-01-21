@@ -1,10 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
 
-import img1 from '/public/img/group-tokuyama-kosen.png'
-import img2 from '/public/img/group-fbyamaguchi.png'
-import img3 from '/public/img/group-digitech-for-yamaguchi.png'
-
 import AboutHeadline from '@/components/AboutHeadline'
 
 type GroupsCountent = {
