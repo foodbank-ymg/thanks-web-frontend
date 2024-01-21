@@ -2,9 +2,9 @@ import Image from 'next/image'
 import React from 'react'
 
 import AboutDescription from '@/components/AboutDescription'
-import AboutRightDisclaimer from '@/components/AboutDisclaimer'
 import AboutGroups from '@/components/AboutGroups'
 import AboutIntroduction from '@/components/AboutIntroduction'
+import AboutRightDisclaimer from '@/components/AboutRightDisclaimer'
 import Donation from '@/components/Donation'
 import HeroRect from '@/components/HeroRect'
 
