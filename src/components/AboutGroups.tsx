@@ -5,6 +5,8 @@ import img1 from '/public/img/group-tokuyama-kosen.png'
 import img2 from '/public/img/group-fbyamaguchi.png'
 import img3 from '/public/img/group-digitech-for-yamaguchi.png'
 
+import AboutHeadline from '@/components/AboutHeadline'
+
 type GroupsCountent = {
   image: string
   detail: string
@@ -48,9 +50,7 @@ const AboutGroups = () => {
   return (
     <div className='mx-auto max-w-screen-lg py-[2em] px-[32px]'>
       <div className='relative mx-auto md:w-[65%]'>
-        <p className='text-h z-10 px-[0.5em] text-center after:absolute after:inset-0 after:z-[-10] after:h-[0.75em] after:translate-y-[1em] after:rounded-full after:bg-myyellow '>
-          関わっている団体
-        </p>
+        <AboutHeadline title='関わっている団体' />
         <p className='my-6 mx-auto max-w-[600px] break-words text-left md:text-center'>
           当サイトは、デジタル技術を活用して地域課題の解決等に取り組むコミュニティ 「デジテック for
           YAMAGUCHI」の共創プロジェクトにより作成されました。
