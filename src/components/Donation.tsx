@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 
 import AboutHeadline from '@/components/AboutHeadline'
+import { EventClickCongrant, event } from '@/lib/gtag'
 
 const Donation = () => {
   return (
@@ -27,6 +28,7 @@ const Donation = () => {
             src='https://congrant.com/project_iframe/foodbank-ymg/8052'
             width='300'
             height='300'
+            onClick={() => event(EventClickCongrant)}
           ></iframe>
         </div>
       </div>
