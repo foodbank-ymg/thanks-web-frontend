@@ -20,7 +20,19 @@ export const EventClickCongrant = {
   label: 'congrant',
 }
 
-type Event = {
+export const EventClickTokuyamaKosen = {
+  action: 'click',
+  category: 'external_link',
+  label: 'tokuyama_kosen',
+}
+
+export const EventClickDigitech = {
+  action: 'click',
+  category: 'external_link',
+  label: 'digitech',
+}
+
+export type Event = {
   action: string
   category: string
   label: string
