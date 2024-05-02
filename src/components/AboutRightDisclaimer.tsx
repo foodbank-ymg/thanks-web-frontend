@@ -1,10 +1,7 @@
-import { defaultMaxListeners } from 'events'
-
 import Image from 'next/image'
 import React from 'react'
 
 import AboutHeadline from '@/components/AboutHeadline'
-import { classNames } from '@/lib/classNames'
 import img from 'public/img/hanaicon20.png'
 
 type RightCountent = {
@@ -43,7 +40,7 @@ const AboutRightDisclaimer = () => {
       <div className='pt-h pb-h'>
         <div className='mx-auto px-[0.5em]'>
           <AboutHeadline title={cont.title} />
-          <div className='my-[32px] mx-auto grid max-w-[600px] grid-flow-row gap-[1em]'>
+          <div className='mx-auto my-[32px] grid max-w-[600px] grid-flow-row gap-[1em]'>
             {cont.details.map((detail, idx) => (
               <div key={idx} className='relative flex-row'>
                 <Image

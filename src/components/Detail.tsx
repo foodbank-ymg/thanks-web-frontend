@@ -7,7 +7,7 @@ const Detail = () => {
       <h1 className='break-words lg:whitespace-nowrap'>
         いただいたカレーのルーで炊き出しをしました。
       </h1>
-      <p className='mt-8 mb-16 text-myyellow'>2023.2.20</p>
+      <p className='mb-16 mt-8 text-myyellow'>2023.2.20</p>
       <p className='mx-auto mb-16 w-full break-words'>
         ああああああああああああああああああああああああああああ
         ああああああああああああああああああああああああああああ

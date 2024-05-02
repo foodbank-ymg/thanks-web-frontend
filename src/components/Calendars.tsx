@@ -13,10 +13,10 @@ const Calendars = ({ yearMonthsList }: Props) => {
     <>
       {/* 花のアイコンたち */}
       <div className='relative h-[15vw] overflow-hidden'>
-        <div className='absolute right-[25vw] bottom-[-1vw] z-10 w-[5vw] max-w-[80px] rotate-[-5deg]'>
+        <div className='absolute bottom-[-1vw] right-[25vw] z-10 w-[5vw] max-w-[80px] rotate-[-5deg]'>
           <Image src='/img/flower_l.svg' width={289} height={372} alt='' className=' ' />
         </div>
-        <div className='absolute right-[15vw] bottom-[-2vw] z-10 w-[8vw] max-w-[110px] rotate-[5deg]'>
+        <div className='absolute bottom-[-2vw] right-[15vw] z-10 w-[8vw] max-w-[110px] rotate-[5deg]'>
           <Image src='/img/flower_r.svg' width={289} height={372} alt='' className=' ' />
         </div>
       </div>
@@ -28,10 +28,10 @@ const Calendars = ({ yearMonthsList }: Props) => {
             key={idx}
             className='flex flex-col justify-center whitespace-nowrap px-4 text-white lg:flex-row'
           >
-            <p className='flex justify-center bg-mybrown py-4 px-10 lg:rounded-l-full'>
+            <p className='flex justify-center bg-mybrown px-10 py-4 lg:rounded-l-full'>
               {yearMonths.year}年
             </p>
-            <div className='grid grid-cols-6 rounded-b-3xl bg-myyellow px-[5%] lg:w-[80%] lg:grid-cols-12 lg:rounded-r-full lg:px-[5%]'>
+            <div className='grid grid-cols-6 rounded-b-3xl bg-myyellow px-[5%] lg:w-4/5 lg:grid-cols-12 lg:rounded-r-full lg:px-[5%]'>
               {yearMonths.months.map((month) => (
                 <Link
                   href={`/monthly-posts/${yearMonths.year}-${month}`}

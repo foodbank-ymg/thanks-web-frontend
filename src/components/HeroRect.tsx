@@ -19,7 +19,7 @@ const HeroRect = ({ bgUrl, children }: Props) => {
     >
       {/* 固定ヘッダーの高さ */}
       <div className='md:h-[100px]' />
-      <div className='pt-2h pb-2h mx-auto w-full max-w-[640px] px-[16px]'>
+      <div className='pt-2h pb-2h mx-auto w-full max-w-screen-sm px-[16px]'>
         <div className='pt-2h pb-2h rounded-common bg-mywhite/80 px-[8px] sm:px-[64px]'>
           {children}
         </div>

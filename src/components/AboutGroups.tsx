@@ -67,10 +67,10 @@ const AboutGroups = () => {
   }
 
   return (
-    <div className='mx-auto max-w-screen-lg py-[2em] px-[32px]'>
+    <div className='mx-auto max-w-screen-lg px-[32px] py-[2em]'>
       <div className='relative mx-auto md:w-[65%]'>
         <AboutHeadline title='関わっている団体' />
-        <p className='my-6 mx-auto max-w-[600px] break-words text-left md:text-center'>
+        <p className='mx-auto my-6 max-w-[600px] break-words text-left md:text-center'>
           当サイトは、デジタル技術を活用して地域課題の解決等に取り組むコミュニティ 「デジテック for
           YAMAGUCHI」の共創プロジェクトにより作成されました。
           徳山高専の学生が中心となって開発を行いました。

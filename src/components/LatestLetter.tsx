@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import React, { useState } from 'react'
 
@@ -19,7 +21,7 @@ const LatestLetter = ({ posts }: Props): JSX.Element => {
   return (
     <>
       <div className='pt-h pb-2h overflow-hidden bg-myyellow px-[28px] sm:mr-[15vw] sm:overflow-visible sm:rounded-r-common sm:px-[40px] md:block'>
-        <div className='ml-auto max-w-[1280px]'>
+        <div className='ml-auto max-w-screen-xl'>
           <div className='mx-auto max-w-[360px] pb-[24px] sm:ml-0 sm:w-[29vw]'>
             <h2 className='text-hb inline-block pb-[8px]'>最近のおたより</h2>
             <div className='max-w-[320px] '>
@@ -42,7 +44,7 @@ const LatestLetter = ({ posts }: Props): JSX.Element => {
             ))}
           </div>
           {/* スマホはカルーセル方式で入れ替えるボタンを配置 */}
-          <div className='my-[8px] mx-auto flex w-full max-w-[320px] items-center justify-around sm:hidden'>
+          <div className='mx-auto my-[8px] flex w-full max-w-[320px] items-center justify-around sm:hidden'>
             <button
               onClick={() => {
                 setCardIndex(cardIndex === 0 ? CARD_QUANTITY - 1 : cardIndex - 1)

@@ -1,5 +1,7 @@
+'use client'
+
 import Image from 'next/image'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 
 import { classNames } from '@/lib/classNames'
@@ -47,7 +49,7 @@ const Menu = () => {
           />
         </div>
         <div className='bg-myyellow bg-smilewhite bg-[right_1rem_top_1rem] bg-no-repeat text-mybrown'>
-          <div className='relative  pt-[48px] pb-[64px]'>
+          <div className='relative  pb-[64px] pt-[48px]'>
             <div className='mx-auto flex w-[60vw] flex-col items-start gap-y-[24px]'>
               {links.map((link) => (
                 <button
@@ -56,7 +58,7 @@ const Menu = () => {
                     setIsOpen(false)
                     router.push(link.href)
                   }}
-                  className='border-b border-dashed border-myyellow pb-[1px] hover:border-mybrown'
+                  className='border-b border-dashed border-myyellow pb-px hover:border-mybrown'
                 >
                   <span className='mr-2'>▶</span>
                   {link.text}
@@ -81,7 +83,7 @@ const Menu = () => {
         </div>
       </div>
       <div
-        className='absolute left-[2.5vw] bottom-[2.5vw]'
+        className='absolute bottom-[2.5vw] left-[2.5vw]'
         onClick={() => {
           setIsOpen(!isOpen)
         }}

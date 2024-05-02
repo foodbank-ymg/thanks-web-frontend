@@ -22,7 +22,7 @@ const Postcard = ({ posts, index, isMobileHorizontal }: Props) => {
       )}
     >
       <div className={classNames('relative mx-auto sm:aspect-[360/550] sm:max-w-[360px]')}>
-        <div className='relative z-10 h-full w-full gap-[16px] rounded-cardouts bg-white sm:rounded-cardoutl'>
+        <div className='relative z-10 size-full gap-[16px] rounded-cardouts bg-white sm:rounded-cardoutl'>
           <Link href={`/post/${post.id}`}>
             <div
               className={classNames(
