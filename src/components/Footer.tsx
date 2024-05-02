@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -10,11 +12,11 @@ const Footer = () => {
       {/* ロゴ */}
       <div className='static left-[5vw] top-[40px] w-[280px] text-center md:absolute lg:w-[480px] lg:text-left'>
         <Link href='/'>
-          <Image src='/img/logo_normal.svg' width='480' height='0' alt='ありがとうWebsiteロゴ' />
+          <Image src='/img/logo_normal.svg' width='480' height='80' alt='ありがとうWebsiteロゴ' />
         </Link>
       </div>
       {/* サイト内リンク */}
-      <div className='flex flex-col gap-y-4 md:absolute md:bottom-[50%] md:right-[5vw] md:translate-y-[50%] lg:ml-auto'>
+      <div className='flex flex-col gap-y-4 md:absolute md:bottom-1/2 md:right-[5vw] md:translate-y-1/2 lg:ml-auto'>
         <Link href='/latest-posts'>
           <span className='mr-2'>▶</span>最近のお便り
         </Link>
@@ -40,7 +42,7 @@ const Footer = () => {
         </Link>
       </div>
       {/* 連絡先 */}
-      <div className='static left-[5vw] bottom-[40px] text-center md:absolute md:text-left'>
+      <div className='static bottom-[40px] left-[5vw] text-center md:absolute md:text-left'>
         <p className='text-[18px]'>特定非営利活動法人&nbsp;フードバンク山口</p>
         <div className='pt-4'>
           <p>山口市黒川1159-13</p>

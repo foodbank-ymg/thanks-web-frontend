@@ -1,5 +1,6 @@
+'use client'
+
 import Image from 'next/image'
-import React from 'react'
 
 import AboutDescription from '@/components/AboutDescription'
 import AboutGroups from '@/components/AboutGroups'
@@ -14,7 +15,13 @@ const AboutPage = () => {
       <HeroRect bgUrl='/img/hero-rect-bg.jpg'>
         <h1 className='text-hb flex flex-col items-center'>
           <div className='h-[67px] w-[80vw] max-w-[400px]'>
-            <Image src='/img/logo_mix.svg' width='400' height='100' alt='' className='' />
+            <Image
+              src='/img/logo_mix.svg'
+              width={400}
+              height={100}
+              alt=''
+              className='h-[100px] w-[400px]'
+            />
           </div>
           について
         </h1>

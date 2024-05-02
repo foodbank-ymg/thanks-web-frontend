@@ -1,7 +1,4 @@
-import moment from 'moment'
-import { GetStaticProps } from 'next'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
 
 import AboutIntroduction from '@/components/AboutIntroduction'
 import HeroLetter from '@/components/HeroLetter'
@@ -10,14 +7,9 @@ import LinkButtonWhite from '@/components/LinkButtonWhite'
 import LinkButtonYellow from '@/components/LinkButtonYellow'
 import PhotoGallary from '@/components/PhotoGallary'
 import { GetApprovedPosts } from '@/data/posts'
-import { Post } from '@/types/Post'
 
-type Props = {
-  posts: Post[]
-}
-
-const HomePage = ({ posts }: Props) => {
-  const router = useRouter()
+const HomePage = async () => {
+  const posts = await GetApprovedPosts()
 
   return (
     <>
@@ -40,24 +32,24 @@ const HomePage = ({ posts }: Props) => {
         <div className='mx-auto px-[32px]'>
           <div className='text-h flex flex-col items-center justify-center gap-[0.5em] text-center md:flex-row md:gap-0'>
             <div className='relative w-fit'>
-              <p className='z-10 px-[0.5em] after:absolute after:inset-0 after:z-[-10] after:h-[0.75em] after:translate-y-[1em] after:rounded-full after:bg-myyellow'>
+              <p className='z-10 px-[0.5em] after:absolute after:inset-0 after:-z-10 after:h-[0.75em] after:translate-y-[1em] after:rounded-full after:bg-myyellow'>
                 ここは&quot;ありがとう&quot;が
               </p>
             </div>
             <div className='relative w-fit md:translate-x-[-1.25vw]'>
-              <p className='z-10 px-[0.5em] after:absolute after:inset-0 after:z-[-10] after:h-[0.75em] after:translate-y-[1em] after:rounded-full after:bg-myyellow'>
+              <p className='z-10 px-[0.5em] after:absolute after:inset-0 after:-z-10 after:h-[0.75em] after:translate-y-[1em] after:rounded-full after:bg-myyellow'>
                 集まるサイトです
               </p>
             </div>
           </div>
-          <div className='my-[32px] mx-auto max-w-[480px]'>
+          <div className='mx-auto my-[32px] max-w-[480px]'>
             <p>私たち「フードバンク山口」は、やまぐちでフードバンク活動をしています。</p>
             <p>
               私たちがお手伝いさせていただいた、食料資源を介した繋がりから生まれた“ありがとう”が、
               このサイトに集まりはじめました。
             </p>
           </div>
-          <div className='my-[32px] mx-auto max-w-[480px]'>
+          <div className='mx-auto my-[32px] max-w-[480px]'>
             <p>
               活動ひとつひとつは小さいかもしれませんが、受け取られた方々からとても大きな“ありがとう”をいただいています。
             </p>
@@ -65,7 +57,7 @@ const HomePage = ({ posts }: Props) => {
           </div>
         </div>
         {/* 花のアイコン */}
-        <div className='absolute right-[16vw] bottom-[-1.5vw] z-10 aspect-[3/4] w-[8vw] min-w-[45px] max-w-[110px] rotate-[5deg]'>
+        <div className='absolute bottom-[-1.5vw] right-[16vw] z-10 aspect-[3/4] w-[8vw] min-w-[45px] max-w-[110px] rotate-[5deg]'>
           <Image src='/img/flower_l.svg' fill alt='' className=' ' />
         </div>
       </div>
@@ -74,10 +66,7 @@ const HomePage = ({ posts }: Props) => {
       <div className='relative pb-[24px] md:pb-[32px]'>
         <LatestLetter posts={posts} />
         <div className='absolute bottom-0 z-10 flex w-full justify-center'>
-          <LinkButtonYellow
-            label='もっとおたよりを見る'
-            onClick={() => router.push('/latest-posts')}
-          />
+          <LinkButtonYellow label='もっとおたよりを見る' href='/latest-posts' />
         </div>
       </div>
 
@@ -93,7 +82,7 @@ const HomePage = ({ posts }: Props) => {
           {/* 白地とボタンを含むエリア */}
           <div className='relative pb-[24px] md:pb-[32px]'>
             {/* 白地のエリア */}
-            <div className='ml-[8%] overflow-hidden rounded-l-common border-[2px] border-mywhite bg-mywhite bg-smile  bg-[length:15vw_15vw] bg-[right_1rem_bottom_1rem] bg-no-repeat md:border-[4px]'>
+            <div className='ml-[8%] overflow-hidden rounded-l-common border-2 border-mywhite bg-mywhite bg-smile  bg-[length:15vw_15vw] bg-[right_1rem_bottom_1rem] bg-no-repeat md:border-4'>
               <div className='translate-x-[-5vw]'>
                 <PhotoGallary posts={posts} minSize='medium' />
               </div>
@@ -108,23 +97,20 @@ const HomePage = ({ posts }: Props) => {
             </div>
             {/* 下部にかかるボタン */}
             <div className='absolute bottom-0 z-10 flex w-full justify-center'>
-              <LinkButtonWhite
-                label='月ごとのおたよりを見る'
-                onClick={() => router.push(`/monthly-posts/latest`)}
-              />
+              <LinkButtonWhite label='月ごとのおたよりを見る' href='/monthly-posts/latest' />
             </div>
           </div>
           {/* 花のアイコンの高さを確保する */}
           <div className='h-[10vw] min-h-[100px]' />
         </div>
         {/* 花のアイコンたち */}
-        <div className='absolute left-[10vw] bottom-[-3.5vw] z-10 aspect-[3/4] w-[12vw] max-w-[290px] rotate-[-5deg]'>
+        <div className='absolute bottom-[-3.5vw] left-[10vw] z-10 aspect-[3/4] w-[12vw] max-w-[290px] rotate-[-5deg]'>
           <Image src='/img/flower_l.svg' width='290' height='0' alt='' className=' ' />
         </div>
-        <div className='absolute right-[25vw] bottom-[-1vw] z-10 aspect-[3/4] w-[5vw] max-w-[80px] rotate-[-5deg]'>
+        <div className='absolute bottom-[-1vw] right-[25vw] z-10 aspect-[3/4] w-[5vw] max-w-[80px] rotate-[-5deg]'>
           <Image src='/img/flower_l.svg' width='290' height='0' alt='' className=' ' />
         </div>
-        <div className='absolute right-[15vw] bottom-[-1.5vw] z-10 aspect-[3/4] w-[8vw] max-w-[110px] rotate-[5deg]'>
+        <div className='absolute bottom-[-1.5vw] right-[15vw] z-10 aspect-[3/4] w-[8vw] max-w-[110px] rotate-[5deg]'>
           <Image src='/img/flower_r.svg' width='290' height='0' alt='' className=' ' />
         </div>
       </div>
@@ -142,7 +128,7 @@ const HomePage = ({ posts }: Props) => {
           <AboutIntroduction />
         </div>
         <div className='absolute bottom-0 z-10 flex w-full justify-center'>
-          <LinkButtonYellow label='いきさつの物語を読む' onClick={() => router.push('/about')} />
+          <LinkButtonYellow label='いきさつの物語を読む' href='/about' />
         </div>
       </div>
 
@@ -157,13 +143,3 @@ const HomePage = ({ posts }: Props) => {
 }
 
 export default HomePage
-
-export const getStaticProps: GetStaticProps = async () => {
-  let posts = await GetApprovedPosts()
-
-  return {
-    props: {
-      posts,
-    },
-  }
-}

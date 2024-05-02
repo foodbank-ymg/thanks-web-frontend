@@ -1,22 +1,20 @@
-import { GetStaticProps } from 'next'
-import React, { useEffect, useState } from 'react'
-
 import Calendars from '@/components/Calendars'
 import HeroRect from '@/components/HeroRect'
 import PostList from '@/components/PostList'
 import { GetApprovedPosts } from '@/data/posts'
 import { biuldYearMonthsList } from '@/lib/posts'
-import { Post } from '@/types/Post'
 import { YearMonths } from '@/types/YearMonths'
 
 const LATEST_POSTS_QUANTITY = 24
 
-type Props = {
-  posts: Post[]
-  yearMonthsList: YearMonths[]
-}
+const LatestPostsPage = async () => {
+  // 投稿データ
+  let posts_ = await GetApprovedPosts()
+  const posts = posts_.slice(0, Math.min(posts_.length, LATEST_POSTS_QUANTITY))
 
-const LatestPostsPage = ({ posts, yearMonthsList }: Props) => {
+  // カレンダー年月
+  const yearMonthsList: YearMonths[] = biuldYearMonthsList(posts_)
+
   return (
     <>
       <HeroRect bgUrl={posts[0].images[0]}>
@@ -40,19 +38,3 @@ const LatestPostsPage = ({ posts, yearMonthsList }: Props) => {
 }
 
 export default LatestPostsPage
-
-export const getStaticProps: GetStaticProps = async () => {
-  // 投稿データ
-  let posts_ = await GetApprovedPosts()
-  const posts = posts_.slice(0, Math.min(posts_.length, LATEST_POSTS_QUANTITY))
-
-  // カレンダー年月
-  const yearMonthsList: YearMonths[] = biuldYearMonthsList(posts_)
-
-  return {
-    props: {
-      posts,
-      yearMonthsList,
-    },
-  }
-}

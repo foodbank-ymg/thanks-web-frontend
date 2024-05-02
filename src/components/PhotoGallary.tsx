@@ -32,7 +32,7 @@ const PhotoGallary = ({ posts, minSize }: Props) => {
               alt=''
               width={150}
               height={150}
-              className='h-full w-full object-cover object-center'
+              className='size-full object-cover object-center'
             />
           </div>
         ))}

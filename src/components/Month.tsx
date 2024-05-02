@@ -19,7 +19,7 @@ const Month = ({ monthlyPath, prevYearMonth, nextYearMonth }: Props) => {
           width={40}
           height={20}
           alt=''
-          className='absolute right-[42%] translate-y-[-30%] translate-x-[50%] object-cover max-md:w-[10%]  md:w-[6%]'
+          className='absolute right-[42%] translate-x-1/2 translate-y-[-30%] object-cover max-md:w-[10%]  md:w-[6%]'
         />
       </div>
       <div className='flex items-center justify-between'>
@@ -30,11 +30,11 @@ const Month = ({ monthlyPath, prevYearMonth, nextYearMonth }: Props) => {
             prevYearMonth === '' && 'invisible',
           )}
         >
-          <div className='relative h-5 w-5 rounded-[50%] bg-mywhite'>
-            <div className='absolute top-[50%] left-[50%] w-[6px] translate-x-[-55%] translate-y-[50%] rotate-45 border border-myyellow'></div>
-            <div className='absolute top-[50%] left-[50%] w-[6px] translate-x-[-55%] translate-y-[-130%] -rotate-45 border border-myyellow'></div>
+          <div className='relative size-5 rounded-[50%] bg-mywhite'>
+            <div className='absolute left-1/2 top-1/2 w-[6px] translate-x-[-55%] translate-y-1/2 rotate-45 border border-myyellow'></div>
+            <div className='absolute left-1/2 top-1/2 w-[6px] translate-x-[-55%] translate-y-[-130%] -rotate-45 border border-myyellow'></div>
           </div>
-          <p className='text-month py-[1vw] pr-[18px] pl-[12px] tracking-[10px]'>先月</p>
+          <p className='text-month py-[1vw] pl-[12px] pr-[18px] tracking-[10px]'>先月</p>
         </Link>
         <div className='items-center justify-items-center text-[4rem]'>
           {monthlyPath.split('-')[1]}
@@ -48,9 +48,9 @@ const Month = ({ monthlyPath, prevYearMonth, nextYearMonth }: Props) => {
           )}
         >
           <p className='text-month py-[1vw] pl-[30px] tracking-[10px]'>次月</p>
-          <div className='relative h-5 w-5 rounded-[50%] bg-mywhite'>
-            <div className='absolute top-[50%] left-[50%] w-[6px] translate-x-[-45%] translate-y-[50%] -rotate-45 border border-myyellow'></div>
-            <div className='absolute top-[50%] left-[50%] w-[6px] translate-x-[-45%] translate-y-[-130%] rotate-45 border border-myyellow '></div>
+          <div className='relative size-5 rounded-[50%] bg-mywhite'>
+            <div className='absolute left-1/2 top-1/2 w-[6px] translate-x-[-45%] translate-y-1/2 -rotate-45 border border-myyellow'></div>
+            <div className='absolute left-1/2 top-1/2 w-[6px] translate-x-[-45%] translate-y-[-130%] rotate-45 border border-myyellow '></div>
           </div>
         </Link>
       </div>

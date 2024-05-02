@@ -26,7 +26,7 @@ const AboutIntroduction = () => {
               />
             </div>
             {/* 右島　*/}
-            <div className='my-4 text-left md:w-[50%]'>
+            <div className='my-4 text-left md:w-1/2'>
               <p className='text-h text-center md:text-left'>
                 たくさんの
                 <br className='md:hidden' />

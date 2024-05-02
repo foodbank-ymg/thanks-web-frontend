@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import React from 'react'
 
 import AboutHeadline from '@/components/AboutHeadline'
@@ -9,7 +8,7 @@ const Donation = () => {
     <div className='mx-auto my-[2em] max-w-screen-lg px-[32px] pb-[32px]'>
       <AboutHeadline title='寄付のお願い' />
       {/* イメージと文章の2段組み */}
-      <div className='my-[32px] mx-auto flex max-w-[720px] flex-col gap-[16px] md:flex-row'>
+      <div className='mx-auto my-[32px] flex max-w-[720px] flex-col gap-[16px] md:flex-row'>
         {/* 左島 */}
         <div className='text-left'>
           <p>

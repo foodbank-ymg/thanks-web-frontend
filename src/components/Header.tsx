@@ -28,7 +28,7 @@ const Header = () => {
               width={400}
               height={100}
               alt=''
-              className='h-[30px] lg:h-[60px]'
+              className='h-[30px] w-[400px] lg:h-[60px] lg:w-auto'
             />
           </Link>
         </div>
