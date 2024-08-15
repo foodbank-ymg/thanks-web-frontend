@@ -22,6 +22,8 @@ jobs:
           credentials_json: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_DEV }}'
       - name: install
         run: yarn install
+      - name: test
+        run: yarn test
       - name: build
         env:
           NEXT_PUBLIC_APP_ENV: 'DEVELOPMENT'

@@ -51,24 +51,35 @@ const MonthlyPostsPage = async ({ params }: { params: { slug: string } }) => {
   const yearMonthsList: YearMonths[] = biuldYearMonthsList(posts_)
   let prevMonthlyPath = ''
   let nextMonthlyPath = ''
-  let prevCandidate = ''
-  let nextSetFlag = false
-  yearMonthsList.forEach((yearMonth) => {
-    yearMonth.months.forEach((month) => {
-      // 当月
-      if (numberToPath(yearMonth.year, month) === monthlyPath) {
-        // 先月候補があればセット
-        if (prevCandidate) {
-          prevMonthlyPath = prevCandidate
+  yearMonthsList.forEach((yearMonth, yearIndex) => {
+    yearMonth.months.forEach((month, monthIndex) => {
+      const path = numberToPath(yearMonth.year, month)
+      if (path === monthlyPath) {
+        // 前月
+        if (monthIndex === 0) {
+          // その年の初月かつ最も古い年でないなら、次の1つ古い年の末月になる（当年が最新なら無し）
+          if (yearIndex !== yearMonthsList.length - 1) {
+            const oldYearMonth = yearMonthsList[yearIndex + 1]
+            const prev = numberToPath(
+              oldYearMonth.year,
+              oldYearMonth.months[oldYearMonth.months.length - 1],
+            )
+            prevMonthlyPath = prev
+          }
+        } else {
+          prevMonthlyPath = numberToPath(yearMonth.year, yearMonth.months[monthIndex - 1])
         }
-        nextSetFlag = true
-      } else {
-        // 先月候補を覚えておく
-        prevCandidate = numberToPath(yearMonth.year, month)
-        // 当月の直後に次月をセット
-        if (nextSetFlag) {
-          nextMonthlyPath = numberToPath(yearMonth.year, month)
-          nextSetFlag = false
+
+        // 次月
+        if (monthIndex === yearMonth.months.length - 1) {
+          // その年の最終月かつ最も新しい年でないなら、前の1つ新しい年の初月になる（当年が最新なら無し）
+          if (yearIndex !== 0) {
+            const newYearMonth = yearMonthsList[yearIndex - 1]
+            const next = numberToPath(newYearMonth.year, newYearMonth.months[0])
+            nextMonthlyPath = next
+          }
+        } else {
+          nextMonthlyPath = numberToPath(yearMonth.year, yearMonth.months[monthIndex + 1])
         }
       }
     })
