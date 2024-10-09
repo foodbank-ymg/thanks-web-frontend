@@ -6,7 +6,6 @@ import { Suspense } from 'react'
 import Footer from '@/components/Footer'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 import Header from '@/components/Header'
-import Menu from '@/components/Menu'
 import { classNames } from '@/lib/classNames'
 import { SEO_DEFAULT } from '@/lib/seo'
 
@@ -34,14 +33,12 @@ export default function RootLayout({
       <body className='palt bg-myyellowpale bg-texture font-zenmaru text-[16px] text-mybrown'>
         <main className='relative'>
           {/* 固定ヘッダー */}
-          <div className='static z-50 w-full lg:fixed'>
+          <div className='sticky z-50 w-full lg:fixed'>
             <Header />
           </div>
-          {children}
-          <Footer />
-          {/* 固定メニュー  */}
-          <div className='fixed bottom-0 left-0 z-50 w-full lg:hidden'>
-            <Menu />
+          <div className='pt-40'>
+            {children}
+            <Footer />
           </div>
         </main>
       </body>
