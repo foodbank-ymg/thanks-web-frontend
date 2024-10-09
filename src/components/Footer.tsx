@@ -34,7 +34,7 @@ const Footer = () => {
           <span className='mr-2'>▶</span>フードバンク山口公式サイト
         </Link>
         <Link
-          href='https://congrant.com/project/foodbank-ymg/8052'
+          href='https://congrant.com/project/civic-support-net/8052'
           target='_blank'
           onClick={() => event(EventClickCongrant)}
         >

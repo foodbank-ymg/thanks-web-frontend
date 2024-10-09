@@ -24,7 +24,7 @@ const Donation = () => {
         {/* 右島　*/}
         <div className='mx-auto max-w-[300px]'>
           <iframe
-            src='https://congrant.com/project_iframe/foodbank-ymg/8052'
+            src='https://congrant.com/project_iframe/civic-support-net/8052'
             width='300'
             height='300'
             onClick={() => event(EventClickCongrant)}

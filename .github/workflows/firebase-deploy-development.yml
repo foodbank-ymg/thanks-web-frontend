@@ -33,4 +33,4 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_DEV }}'
           channelId: live
-          projectId: thanks-web-dev
+          projectId: houfu-cf-web-dev

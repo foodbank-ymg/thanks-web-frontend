@@ -35,7 +35,7 @@ const AboutDescription = () => {
               onClick={() => {
                 event(EventClickGithub)
                 window.open(
-                  'https://github.com/foodbank-ymg/thanks-web-frontend',
+                  'https://github.com/civic-support-net/houfu-cf-web-frontend',
                   '_blank',
                   'noreferrer',
                 )
