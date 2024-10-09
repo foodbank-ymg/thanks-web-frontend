@@ -1,14 +1,14 @@
-# thanks-web-frontend
+# houfu-cf-web-frontend
 
-フードバンクありがとう Website のフロントエンドです。Web サイトを管理しています。
+防府コミュニティフリッジ Website のフロントエンドです。Web サイトを管理しています。
 
-<https://thankyou.fbyamaguchi.org/>
+ドメイン未定
 
 > [!IMPORTANT]
 > おたよりの投稿フローとデータはバックエンド側で管理しています。
 > 実際にサービスとして提供するには、バックエンドを含めた Web 環境の構築が必要です。
 
-<https://github.com/foodbank-ymg/thanks-web-backend/>
+<https://github.com/civic-support-net/houfu-cf-web-backend/>
 
 ## ローカル環境
 
