@@ -1,39 +1,16 @@
-'use client'
-
-import Image from 'next/image'
-
-import AboutDescription from '@/components/AboutDescription'
-import AboutGroups from '@/components/AboutGroups'
-import AboutIntroduction from '@/components/AboutIntroduction'
-import AboutRightDisclaimer from '@/components/AboutRightDisclaimer'
-import Donation from '@/components/Donation'
-import HeroRect from '@/components/HeroRect'
-
 const AboutPage = () => {
   return (
     <>
-      <HeroRect bgUrl='/img/hero-rect-bg.jpg'>
-        <h1 className='text-hb flex flex-col items-center'>
-          <div className='h-[67px] w-[80vw] max-w-[400px]'>
-            <Image
-              src='/img/logo_mix.svg'
-              width={400}
-              height={100}
-              alt=''
-              className='h-[100px] w-[400px]'
-            />
-          </div>
-          について
-        </h1>
-      </HeroRect>
-
-      <div className='bg-myyellow py-[2.5em]'>
-        <AboutIntroduction />
+      {/* 見出し */}
+      <div>
+        <h1 className='text-hb flex flex-col items-center py-36'>このサイトについて</h1>
       </div>
-      <AboutGroups />
-      <AboutDescription />
-      <AboutRightDisclaimer />
-      <Donation />
+
+      {/* 内容1 */}
+      <div className='flex h-[600px] w-full items-center justify-center bg-purple-200'>内容1</div>
+
+      {/* 内容2 */}
+      <div className='flex h-[600px] w-full items-center justify-center bg-cyan-200'>内容2</div>
     </>
   )
 }
