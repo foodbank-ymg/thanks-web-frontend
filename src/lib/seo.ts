@@ -1,9 +1,9 @@
 import { Metadata } from 'next'
 
-const siteName = 'フードバンク山口ありがとうWebsite'
+const siteName = '防府コミュニティフリッジ'
 const description =
-  'フードバンク山口を利用された方からの「ありがとう」の気持ちを集めたWebサイトです。'
-const url = 'https://thankyou.fbyamaguchi.org/'
+  '防府コミュニティフリッジは山口県防府市にある、食料品や日用品を提供したり、それを自由に受け取ることができるみんなの公共冷蔵です。'
+const url = 'https://houfu-cf.org/'
 
 export const SEO_DEFAULT: Metadata = {
   metadataBase: new URL(url),
