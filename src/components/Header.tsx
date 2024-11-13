@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 
 import { menus } from '@/consts/menus'
+import { cn } from '@/lib/utils'
 
 const Header = () => {
   return (
@@ -14,8 +15,10 @@ const Header = () => {
         </div>
         <ul className='flex gap-4'>
           {menus.map((menu) => (
-            <li key={menu.href} className='rounded-full border border-gray-400 px-4 py-2'>
-              <Link href={menu.href}>{menu.label}</Link>
+            <li key={menu.href} className={cn('rounded-full border-2 px-4 py-2', menu.bo_color)}>
+              <Link href={menu.href} className={menu.tx_color}>
+                {menu.label}
+              </Link>
             </li>
           ))}
         </ul>
