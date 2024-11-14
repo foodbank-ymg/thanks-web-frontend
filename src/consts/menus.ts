@@ -1,10 +1,10 @@
 export const menus = [
   {
-    label: '提供する',
+    label: 'おくる',
     href: '/provider',
   },
   {
-    label: '受け取る',
+    label: 'うけとる',
     href: '/recipient',
   },
   {
