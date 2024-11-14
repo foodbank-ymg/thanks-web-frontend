@@ -27,20 +27,21 @@ export default function AboutOrganizations() {
           headline='このサイトに関わっている団体'
           bgColor='bg-primary'
           textColor='text-black'
-        />      
+        />
         <p>
-          当サイトは、デジタル技術を活用して地域課題の解決等に取り組むコミュニティ「デジテック for YAMAGUCHI」の饗応プロジェクトにより作成されました。徳山高専の学生が中心となって開発を行いました
+          当サイトは、デジタル技術を活用して地域課題の解決等に取り組むコミュニティ「デジテック for
+          YAMAGUCHI」の饗応プロジェクトにより作成されました。徳山高専の学生が中心となって開発を行いました
         </p>
       </div>
 
       <div className='key ={organizations.id} flex'>
         {organizations.map((organizations, index) => (
-          <ul className='flex flex-col space-y-4 rounded-lg p-5 ' key ={index} >
-            <div className='flex h-40 w-128 items-center justify-center rounded-lg border-2 border-gray-300 bg-gray-200'>
+          <ul className='flex flex-col space-y-4 rounded-lg p-5 ' key={index}>
+            <div className='flex h-40 items-center justify-center rounded-lg border-2 border-gray-300 bg-gray-200'>
               <p className='text-gray-500'>画像がここに入ります</p>
             </div>
             <li>{organizations.organizationText}</li>
-          </ul>//画像はorganizationURLを挟んで表示させる
+          </ul> //画像はorganizationURLを挟んで表示させる
         ))}
       </div>
 
