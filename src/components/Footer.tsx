@@ -9,13 +9,16 @@ const Footer = () => {
       <div className='justify-starts relative mx-auto flex max-w-screen-lg flex-col items-center space-y-5 p-5 md:flex-row'>
         <img src='null' className='w-32 p-4' alt='ロゴ' />
 
-        <div className='flex-col md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2'>
-          <div className='flex space-x-5 md:flex-col md:space-x-0'>
-            <Link href='/provider'>&#x25B6; おくる</Link>
-            <Link href='/recipient'>&#x25B6; うけとる</Link>
-          </div>
-          <Link href='/about'>&#x25B6; このサイトについて</Link>
-        </div>
+
+        <ul className='flex-col md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2'>
+          {menus.map((menu, index) => (
+            <li key={index} className='flex '>
+              <img src = ''></img>
+              <Link href={menu.href}>{menu.label}</Link>
+            </li>
+          ))}
+        </ul>
+
 
         <div className='space-y-3 break-words text-center text-sm md:text-left'>
           <p className='space-y-5 text-2xl'>防府コミュニティブリッジ</p>
